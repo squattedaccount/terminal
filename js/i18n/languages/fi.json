@@ -244,10 +244,7 @@
       "Reilu julkaisu: Ei valkolistoja, ei riskipääomasijoittajia, ei sisäpiirejä.",
       "",
       "Tulevaisuuden suunnitelmia, yhteisön rakentamista ja markkinointia varten 150 NFT:tä mintataan koodilla seuraavaan osoitteeseen:",
-      "TBA",
-      "",
-      "Lisäksi 150 NFT:tä menee techno_punks DAO:n kassaan:",
-      "TBA",
+      "0x619818D43D17421dF6Ae8ECA65CDDf827AB8B912",
       "",
       "Niukkuusmatematiikka:",
       "5,184 tokenia vs. 5,5 miljardia ihmisinternetinkäyttäjää + 2 miljardia bottia.",
@@ -381,14 +378,14 @@
       "checkingColors": "Tarkistetaan tokenin #{{tokenId}} värejä...",
       "colorsForToken": "Värit tokenille #{{tokenId}}:",
       "mintStart": "Starting mint process for {{quantity}} NFT(s)...",
-      "approveTransaction": "You will need to approve the transaction in your wallet.",
-      "approveTransactions": "You will need to approve each transaction in your wallet.",
+      "approveTransaction": "Sinun täytyy hyväksyä tapahtuma lompakossasi.",
+      "approveTransactions": "Sinun täytyy hyväksyä jokainen tapahtuma lompakossasi.",
       "mintedToken": "Minted Token #{{tokenId}}",
       "customizationStart": "Starting color customization for {{count}} NFT(s)...",
       "customizingToken": "Customizing Token #{{tokenId}} ({{i}} of {{count}})...",
-      "metaMaskRequired": "MetaMask not detected. Please install the browser extension from https://metamask.io/download/ to continue.",
-      "transactionTakingLong": " Transaction taking longer than expected (2+ minutes). Please wait...",
-      "contactingBlockchain": "Connecting to Hyperliquid network..."
+      "metaMaskRequired": "MetaMaskia ei havaittu. Asenna MetaMask jatkaaksesi.",
+      "transactionTakingLong": "Tapahtuma kestää odotettua kauemmin (yli 2 minuuttia). Odota hetki...",
+      "contactingBlockchain": "Yhdistetään Hyperliquid-verkkoon..."
     },
     "success": {
       "minted": "Mintattu onnistuneesti {{count}} NFT:tä!",
@@ -433,9 +430,9 @@
       "customizationSuccess": "Token ID:n #{{tokenId}} mukautus onnistui. Transaktio vahvistettu: {{txHash}}",
       "walletAlreadyConnected": "Wallet is already connected. Account: {{account}}",
       "progress": "{{progressMessage}}",
-      "colorTxApproved": "Color transaction for Token #{{tokenId}} approved. Waiting for confirmation...",
-      "viewOnExplorer": "View on Hyperscan",
-      "fetchingCollectionInfo": "Fetching collection info from Hyperliquid..."
+      "colorTxApproved": "Väritransaktio tokenille #{{tokenId}} hyväksytty. Odotetaan vahvistusta...",
+      "viewOnExplorer": "Näytä Hyperscanissa",
+      "fetchingCollectionInfo": "Haetaan kokoelman tietoja Hyperliquidista..."
     },
     "progress": {
       "preparingTx": "Valmistellaan transaktiota... Vahvista lompakossasi.",
@@ -460,8 +457,8 @@
     "error": {
       "generic": "Virhe: {{message}}",
       "connectionDenied": "Yhteys epäonnistui: Käyttäjä epäsi tilin pääsyn.",
-      "noWallet": "Lompakkolaajennusta ei havaittu selaimessasi. Asenna Metamask.",
-      "metaMaskRequired": "MetaMaskia ei havaittu. Asenna selainlaajennus osoitteesta https://metamask.io/download/ jatkaaksesi.",
+      "noWallet": "Lompakkolaajennusta ei havaittu selaimessasi. Asenna MetaMask.",
+      "metaMaskRequired": "MetaMaskia ei havaittu. Asenna MetaMask jatkaaksesi.",
       "addNetwork": "Verkon {{chainName}} lisääminen epäonnistui.",
       "notConnected": "Virhe: Lompakkoa ei ole yhdistetty. Käytä 'connect'-komentoa yhdistääksesi lompakkosi.",
       "notConnectedBeforeMint": "Virhe: Lompakkoa ei ole yhdistetty. Käytä 'connect'-komentoa yhdistääksesi lompakkosi ennen minttaamista.",

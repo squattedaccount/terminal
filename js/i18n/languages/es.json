@@ -196,18 +196,18 @@
       }
     },
     "verify": {
-      "summary": "verify NFT ownership for Discord role",
+      "summary": "verifica la propiedad del NFT para rol de Discord",
       "detailed": [
         "",
-        "Usage: verify [subcommand]",
+        "Uso: verify [subcomando]",
         "",
-        "Connects your wallet to your Discord account to grant special roles.",
+        "Conecta tu billetera con tu cuenta de Discord para otorgar roles especiales.",
         "",
-        "Subcommands:",
-        "  verify <discord-id>   Starts the verification process.",
-        "  verify check            Checks your current verification status.",
+        "Subcomandos:",
+        "  verify <discord-id>   Inicia el proceso de verificación.",
+        "  verify check            Revisa tu estado de verificación actual.",
         "",
-        "To get your Discord ID, go to the server and type: !my-id",
+        "Para obtener tu ID de Discord, ve al servidor y escribe: !my-id",
         ""
       ]
     },
@@ -245,9 +245,9 @@
       "customizationStart": "Iniciando personalización de color para {{count}} NFT(s)...",
       "customizingToken": "Personalizando Token #{{tokenId}} ({{i}} de {{count}})...",
       "contactingBlockchain": "Conectando a la red de Hyperliquid...",
-      "approveTransaction": "You will need to approve the transaction in your wallet.",
-      "metaMaskRequired": "MetaMask not detected. Please install the browser extension from https://metamask.io/download/ to continue.",
-      "transactionTakingLong": " Transaction taking longer than expected (2+ minutes). Please wait..."
+      "approveTransaction": "Deberás aprobar la transacción en tu billetera.",
+      "metaMaskRequired": "MetaMask no detectado. Por favor, instala MetaMask para continuar.",
+      "transactionTakingLong": "La transacción está tardando más de lo esperado (más de 2 minutos). Por favor, espera..."
     },
     "success": {
       "minted": "¡Se acuñaron {{count}} NFT(s) con éxito!",
@@ -264,42 +264,42 @@
       "noWinamp": "El reproductor de música no está disponible.",
       "viewInit": "Error al inicializar la vista del terminal: {{message}}",
       "setUsage": "Error: Incorrect usage.",
-      "walletNotFound": "Wallet '{{walletName}}' not found. Please check the name and try again.",
-      "svgLoadFailed": "Error loading SVG: {{message}}",
-      "failedToSetCustomTheme": "Failed to set custom theme: {{message}}",
-      "failedToLoadScript": "Failed to load script: {{src}}",
-      "failedToLoadSVG": "Failed to load SVG: {{status}}"
+      "walletNotFound": "No se encontró la billetera '{{walletName}}'. Verifica el nombre e inténtalo de nuevo.",
+      "svgLoadFailed": "Error al cargar el SVG: {{message}}",
+      "failedToSetCustomTheme": "No se pudo establecer el tema personalizado: {{message}}",
+      "failedToLoadScript": "No se pudo cargar el script: {{src}}",
+      "failedToLoadSVG": "No se pudo cargar el SVG: {{status}}"
     }
   },
   "web3": {
     "success": {
       "walletConnected": "Billetera conectada con éxito. Cuenta: {{account}}",
-      "walletDisconnected": "Wallet disconnected. To switch wallets, please use your browser extension before reconnecting."
+      "walletDisconnected": "Billetera desconectada. Para cambiar de billetera, usa tu extensión del navegador antes de reconectar."
     },
     "info": {
       "walletAlreadyConnected": "La billetera ya está conectada. Cuenta: {{account}}",
       "progress": "{{progressMessage}}",
       "colorTxApproved": "Transacción de color para el Token #{{tokenId}} aprobada. Esperando confirmación...",
       "viewOnExplorer": "Ver en Hyperscan",
-      "noNFTsFound": "You do not own any techno_punks NFTs yet. Use the 'mint' command to get yours!",
-      "fetchingCollectionInfo": "Fetching collection info from Hyperliquid...",
-      "connecting": "Attempting to connect to MetaMask...",
-      "sendingCustomization": "Sending customization request for Token ID #{{tokenId}}...",
-      "txSent": "Transaction sent! Hash: {{hash}}",
-      "customizationSuccess": "Successfully customized Token ID #{{tokenId}}. Transaction confirmed: {{txHash}}"
+      "noNFTsFound": "Aún no posees techno_punks NFTs. Usa el comando 'mint' para conseguir el tuyo.",
+      "fetchingCollectionInfo": "Obteniendo información de la colección desde Hyperliquid...",
+      "connecting": "Intentando conectar con MetaMask...",
+      "sendingCustomization": "Enviando solicitud de personalización para el ID de token #{{tokenId}}...",
+      "txSent": "¡Transacción enviada! Hash: {{hash}}",
+      "customizationSuccess": "Token ID #{{tokenId}} personalizado correctamente. Transacción confirmada: {{txHash}}"
     },
     "progress": {
-      "preparingTx": "Preparando transacción... Por favor, confirma en tu billetera.",
+      "preparingTx": "Preparando transacción... Confirma en tu billetera.",
       "preparingBatchTx": "Preparando transacción por lotes para {{quantity}} NFTs... Por favor, confirma en tu billetera.",
       "batchTxSubmitted": "Transacción por lotes enviada en Hyperliquid: {{hash}} ({{quantity}} NFTs)",
       "batchTxConfirmed": "¡Transacción por lotes confirmada! Procesando {{quantity}} tokens acuñados...",
       "minting": "Acuñando NFT {{i}} de {{quantity}}... Por favor, confirma la transacción en tu billetera.",
       "txApproved": "Transacción para NFT {{i}} aprobada. Esperando confirmación...",
-      "txSubmitted": "Transaction submitted on Hyperliquid: {{hash}}",
-      "txConfirmed": "Transaction confirmed! Processing minted tokens...",
-      "txTimeout": "Web3 timeout reached, but transaction {{hash}} may still be processing...",
-      "batchTxTimeout": "Web3 timeout reached, but batch transaction {{hash}} ({{quantity}} NFTs) may still be processing...",
-      "stillWaiting": "Still waiting for confirmation... ({{elapsed}}s elapsed) - {{hash}}"
+      "txSubmitted": "Transacción enviada en Hyperliquid: {{hash}}",
+      "txConfirmed": "¡Transacción confirmada! Procesando tokens acuñados...",
+      "txTimeout": "Se alcanzó el tiempo de espera de Web3, pero la transacción {{hash}} puede seguir procesándose...",
+      "batchTxTimeout": "Se alcanzó el tiempo de espera de Web3, pero la transacción por lotes {{hash}} ({{quantity}} NFTs) puede seguir procesándose...",
+      "stillWaiting": "Aún esperando confirmación... ({{elapsed}}s transcurridos) - {{hash}}"
     },
     "error": {
       "generic": "Error: {{message}}",
@@ -315,11 +315,11 @@
       "customizationRejected": "La personalización falló: La transacción fue rechazada por el usuario.",
       "customizationFailed": "La personalización falló. Consulta la consola para más detalles.",
       "fetchFont": "No se pudo obtener la fuente para el Token ID #{{tokenId}}. Puede que no exista.",
-      "metaMaskRequired": "MetaMask not detected. Please install the browser extension from https://metamask.io/download/ to continue.",
-      "notOwner": "Error: You are not the owner of Token ID #{{tokenId}}. You can only customize NFTs that you own.",
-      "tokenNotFound": "Error: Token ID #{{tokenId}} does not exist.",
-      "setMissingArgs": "Missing required arguments. Use 'help set' for usage information.",
-      "setInvalidArgs": "Invalid arguments provided. Use 'help set' for usage information."
+      "metaMaskRequired": "MetaMask no detectado. Por favor, instala MetaMask para continuar.",
+      "notOwner": "Error: No eres el propietario del Token ID #{{tokenId}}. Solo puedes personalizar NFT que posees.",
+      "tokenNotFound": "Error: El Token ID #{{tokenId}} no existe.",
+      "setMissingArgs": "Faltan argumentos obligatorios. Usa 'help set' para información de uso.",
+      "setInvalidArgs": "Argumentos inválidos. Usa 'help set' para información de uso."
     },
     "status": {
       "title": "Collection Info",
@@ -372,10 +372,7 @@
       "Para evitar a los influencers de la Web2, la acuñación solo está disponible a través de Etherscan.",
       "",
       "Para planes futuros y marketing, se acuñarán 150 NFTs por código en la siguiente dirección:",
-      "TBA",
-      "",
-      "150 NFTs adicionales irán a la tesorería de la DAO de techno_punks:",
-      "TBA",
+      "0x619818D43D17421dF6Ae8ECA65CDDf827AB8B912",
       "",
       "NFA:",
       "Matemática de la escasez: 5,124 tokens frente a 4.6 mil millones de usuarios de Internet.",
@@ -525,20 +522,20 @@
   },
   "currentLanguage": "Current language is:",
   "verify": {
-    "connecting": "Connecting to wallet...",
-    "connectionFailed": "Wallet connection failed. Please try again.",
-    "signMessage": "Please sign the message in your wallet to continue.",
-    "sending": "Sending verification to server...",
-    "success": "Verification successful: {{message}}",
-    "failed": "Verification failed: {{error}}",
-    "checkingStatus": "Checking verification status...",
-    "statusVerified": "This wallet is verified.",
-    "discordUser": "Discord User: {{username}} (ID: {{discordId}})",
-    "walletAddress": "Wallet Address: {{walletAddress}}",
-    "verifiedOn": "Verified On: {{timestamp}}",
-    "statusNotVerified": "This wallet is not verified.",
-    "startProcess": "To start the verification process, use 'verify <your_discord_id>'.",
-    "statusCheckFailed": "Failed to check verification status.",
-    "invalidSubcommand": "Invalid subcommand. Use 'verify check' to check status, or 'verify <your_discord_id>' to start."
+    "connecting": "Conectando a la billetera...",
+    "connectionFailed": "La conexión con la billetera falló. Inténtalo de nuevo.",
+    "signMessage": "Firma el mensaje en tu billetera para continuar.",
+    "sending": "Enviando verificación al servidor...",
+    "success": "Verificación exitosa: {{message}}",
+    "failed": "La verificación falló: {{error}}",
+    "checkingStatus": "Comprobando estado de verificación...",
+    "statusVerified": "Esta billetera está verificada.",
+    "discordUser": "Usuario de Discord: {{username}} (ID: {{discordId}})",
+    "walletAddress": "Dirección de la billetera: {{walletAddress}}",
+    "verifiedOn": "Verificado el: {{timestamp}}",
+    "statusNotVerified": "Esta billetera no está verificada.",
+    "startProcess": "Para iniciar el proceso de verificación, usa 'verify <tu_discord_id>'.",
+    "statusCheckFailed": "Error al comprobar el estado de verificación.",
+    "invalidSubcommand": "Subcomando no válido. Usa 'verify check' para verificar el estado o 'verify <tu_discord_id>' para empezar."
   }
 }
