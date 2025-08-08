@@ -1,0 +1,37 @@
+/* 
+ * Main CSS Entry Point
+ * Imports all other CSS files in the correct order
+ */
+
+/* 1. Variables and resets */
+@import 'variables.css';
+
+/* 2. Base styles */
+@import 'main.css';
+
+
+
+/* 3. Components */
+@import 'components/mobile.css';
+
+@import 'components/svg-components.css';
+@import 'theme-toggle.css';
+@import 'custom-terminal.css';
+@import 'music-player.css';
+
+/* 4. Animations */
+@import 'animations/sidebar.css';
+@import 'animations/matrix.css';
+
+@import 'draw-mode.css';
+
+/* 5. Global animations */
+
+/* Ensure width transition for left matrix container for smooth collapse */
+.simple-matrix-container[data-side="left"] {
+    transition: width 1s ease-in-out;
+}
+
+/* 6. Global styles */
+
+

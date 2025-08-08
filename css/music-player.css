@@ -1,0 +1,98 @@
+/* css/music-player.css */
+#music-player-container {
+  transition: none;
+  position: fixed;
+  top: 0px;
+  right: 75px;
+  z-index: 999;
+  display: flex; /* Use flex to manage the layout of its direct child, #music-controls */
+  justify-content: flex-end; /* Push #music-controls to the right edge of this container */
+  align-items: flex-start; /* Align #music-controls to the top of this container */
+  max-width: 400px; /* Max width for the entire music player component */
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 18px;
+  color: var(--text-color);
+  /* Removed flex-direction as it's not needed for a single child positioned this way */
+}
+
+#music-controls {
+  display: flex;
+  flex-direction: row; /* Align song info and buttons horizontally */
+  align-items: flex-start; /* Vertically align song info and buttons to the top */
+  gap: 20px; /* Increased space between song info and button group */
+  color: var(--text-color); /* Use theme text color for separators */
+}
+
+.button-group {
+  display: flex;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+  color: var(--text-color); /* Ensure buttons inherit color from theme */
+}
+
+#music-controls button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: var(--text-color); /* Use theme text color */
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 18px;
+  white-space: pre; /* Preserve spaces in button text */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+  opacity: 1; /* Changed to fully opaque */
+}
+
+#music-controls button:hover {
+  opacity: 0.7;
+}
+
+#song-info {
+  font-family: var(--font-mono, 'Share Tech Mono', monospace);
+  font-size: 18px;
+  color: var(--text-color);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1; /* Allow song info to take available space */
+  flex-shrink: 1; /* Allow song info to shrink if needed */
+  text-align: left; /* Song title text should be left-aligned */
+  min-width: 0; /* Important for flex items that can shrink and have overflow */
+}
+
+#song-info a {
+  color: var(--text-color); /* Directly use text-color for white/black based on theme */
+  text-decoration: none;
+}
+
+#song-info a:hover {
+  text-decoration: underline;
+}
+
+/* Hide the iframe by default, JS will manage it */
+#soundcloud-player {
+  display: none;
+  border: 1px solid var(--border-color); /* Optional: if you ever make it visible */
+  border-radius: 4px;
+}
+
+/* Mobile adjustments - stack controls and center them */
+@media (max-width: 768px) {
+  #music-player-container {
+    top: 50px; /* Adjust if theme toggle moves */
+    right: 10px; /* Align with mobile theme toggle */
+    align-items: flex-end; /* Keep alignment for consistency */
+  }
+
+  #music-controls button {
+    font-size: 18px;
+    padding: 4px 8px;
+  }
+
+  #song-info {
+    font-size: 12px;
+  }
+}

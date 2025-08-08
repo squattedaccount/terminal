@@ -1,0 +1,498 @@
+{
+  "languageChanged": "Kieli vaihdettu onnistuneesti.",
+  "welcome": "Tervetuloa syvyyteen. Kirjoita [help] ollaksesi vuorovaikutuksessa.",
+  "commandNotFound": "Komentoa ei löydy: ",
+  "currentLanguage": "Nykyinen kieli on:",
+  "availableCommands": "Saatavilla olevat komennot: ",
+  "help": {
+    "title": "Saatavilla olevat komennot",
+    "general": {
+      "footer": "Saadaksesi lisätietoja tietystä komennosta, kirjoita: help [komennon_nimi]"
+    },
+    "specific": {
+      "noDescription": "Kuvausta ei saatavilla.",
+      "noUsage": "Ei käyttötietoja.",
+      "usagePrefix": "Käyttö:",
+      "examplesTitle": "Esimerkit:"
+    },
+    "categories": {
+      "core": "Ydinkomennot",
+      "info": "Tietokomennot",
+      "tools": "Työkalukomennot",
+      "web3": "Web3-komennot",
+      "other": "Muut komennot"
+    },
+    "help": {
+      "summary": "näyttää listan saatavilla olevista komennoista",
+      "detailed": {
+        "description": "Antaa ohjeita komennoille.",
+        "usage": "help [komento]",
+        "examples": [
+          "Esimerkki: help",
+          "Esimerkki: help mint"
+        ]
+      }
+    },
+    "about": {
+      "summary": "opi techno_punks-liikkeestä",
+      "detailed": {
+        "description": "Näyttää tietoja techno_punks-projektista.",
+        "usage": "about"
+      }
+    },
+    "legal": {
+      "summary": "oikeudelliset tiedot ja vastuuvapauslausekkeet",
+      "detailed": {
+        "description": "Näyttää oikeudelliset tiedot ja vastuuvapauslausekkeet.",
+        "usage": "legal"
+      }
+    },
+    "roadmap": {
+      "summary": "tarkastele projektin tiekarttaa",
+      "detailed": {
+        "description": "Näyttää projektin tiekartan.",
+        "usage": "roadmap"
+      }
+    },
+    "team": {
+      "summary": "projektin takana oleva tiimi",
+      "detailed": {
+        "description": "Näyttää tietoja projektitiimistä.",
+        "usage": "team"
+      }
+    },
+    "links": {
+      "summary": "lista hyödyllisiä linkkejä",
+      "detailed": {
+        "description": "Näyttää listan projektiin liittyvistä hyödyllisistä linkeistä.",
+        "usage": "links"
+      }
+    },
+    "collection": {
+      "summary": "tutustu kokoelmaan",
+      "detailed": {
+        "description": "Näyttää satunnaisesti generoidun kokoelman merkkipareja.",
+        "usage": "collection"
+      }
+    },
+    "supply": {
+      "summary": "tokenin tarjonta- ja jakelutiedot",
+      "detailed": {
+        "description": "Näyttää tietoja tokenin tarjonnasta ja jakelusta.",
+        "usage": "supply"
+      }
+    },
+    "status": {
+      "summary": "kokoelman onchain-tila",
+      "detailed": {
+        "description": "Hakee ja näyttää NFT-kokoelman nykyisen on-chain-tilan.",
+        "usage": "Käyttö: status",
+        "examples": [
+          "Esimerkki: status"
+        ]
+      }
+    },
+    "connect": {
+      "summary": "yhdistä MetaMask-lompakkosi",
+      "detailed": {
+        "description": "Yhdistää MetaMask-lompakkosi sovellukseen.",
+        "usage": "Käyttö: connect",
+        "examples": []
+      }
+    },
+    "clear": {
+      "summary": "tyhjentää terminaalin näytön",
+      "detailed": {
+        "description": "Tyhjentää terminaalin näytön ja näyttää tervetuloviestin.",
+        "usage": "Käyttö: clear",
+        "examples": [
+          "Esimerkki: clear"
+        ]
+      }
+    },
+    "cls": {
+      "summary": "aliakse clear-komennolle",
+      "detailed": {
+        "description": "Alias clear-komennolle.",
+        "usage": "Käyttö: cls",
+        "examples": [
+          "Esimerkki: cls"
+        ]
+      }
+    },
+    "winamp": {
+      "summary": "käynnistää musiikkisoittimen",
+      "detailed": {
+        "description": "Vaihtaa musiikkisoittimen näkyvyyttä.",
+        "usage": "Käyttö: winamp",
+        "examples": [
+          "Esimerkki: winamp"
+        ]
+      }
+    },
+    "lang": {
+      "summary": "Näyttää nykyisen kielen tai asettaa uuden.",
+      "detailed": {
+        "description": "Näyttää nykyisen kielen tai asettaa uuden kielen terminaalille.",
+        "usage": "lang [kielikoodi]",
+        "examples": [
+          "lang (näyttää nykyisen kielen)",
+          "lang fi (asettaa kielen suomeksi)"
+        ],
+
+        "footer": "\nAvailable languages:\n  en   English\n  es   Spanish\n  de   German\n  zh   Chinese"
+      },
+      "error": {
+        "invalidCode": "Virhe: Virheellinen tai tukematon kielikoodi.",
+        "suggestion": "Kirjoita 'help lang' nähdäksesi listan saatavilla olevista kielistä."
+      }
+    },
+    "disconnect": {
+      "summary": "katkaisee yhteyden nykyiseen lompakkoon",
+      "detailed": {
+        "description": "Katkaisee yhteyden nykyiseen lompakkoon sovelluksesta.",
+        "usage": "Käyttö: disconnect",
+        "examples": [
+          "Esimerkki: disconnect"
+        ]
+      }
+    },
+    "mint": {
+      "summary": "luo uusia techno_punks NFT:itä",
+      "detailed": {
+        "description": "Luo yhden tai useamman techno_punks NFT:n yhdistettyyn lompakkoosi.",
+        "usage": "mint techno_punks [määrä]",
+        "examples": [
+          "mint techno_punks 1",
+          "mint techno_punks 20"
+        ]
+      },
+      "error": {
+        "invalidQuantity": "Virhe: Voit luoda vain 1-20 NFT:tä kerralla.",
+        "walletNotConnected": "Virhe: Lompakkoa ei ole yhdistetty. Käytä 'connect'-komentoa yhdistääksesi lompakkosi ennen luontia.",
+        "missingArgs": "Virhe: Puuttuvat argumentit.\nKäyttö: mint techno_punks [määrä] [--bg #hexväri] [--text #hexväri]\nLisätietoja: help mint"
+      }
+    },
+    "list": {
+      "summary": "listaa NFT:si",
+      "detailed": {
+        "description": "Listaa omistamasi techno_punks NFT:t.",
+        "usage": "list",
+        "examples": []
+      }
+    },
+    "set": {
+      "summary": "aseta mukautettu väri NFT:llesi",
+      "detailed": {
+        "description": "Aseta mukautettu väri käyttämällä:",
+        "usage": "set <token_id> [--bg <hex_väri>] [--text <hex_väri>]",
+        "examples": [
+          "set 123 --bg #000000",
+          "set 123 --text #ffffff",
+          "set 123 --bg #ff0000 --text #00ff00"
+        ]
+      },
+      "error": {
+        "missingArgs": "Virhe: Puuttuvat argumentit. Käytä 'help set' lisätietoja varten.",
+        "invalidArgs": "Virhe: On annettava vähintään yksi mukautus, kuten --bg tai --text."
+      }
+    },
+    "get-colors": {
+      "summary": "hae NFT:si värit",
+      "detailed": {
+        "description": "Hakee nykyisen tausta- ja tekstivärin annetulle token ID:lle.",
+        "usage": "get-colors <token_id>",
+        "examples": ["get-colors 123"]
+      }
+    },
+    "draw": {
+      "summary": "siirtyy kokeelliseen piirustustilaan",
+      "detailed": {
+        "description": "Siirtyy kokeelliseen piirustustilaan.",
+        "usage": "draw",
+        "examples": []
+      }
+    },
+    "verify": {
+      "summary": "Vahvista NFT-omistajuus Discord-roolia varten",
+      "detailed": {
+        "description": "Yhdistää lompakkosi Discord-tiliisi myöntääksesi erikoisrooleja.",
+        "usage": "verify <discord_id>",
+        "examples": ["verify 1234567891012"]
+      }
+    }
+  },
+  "commands": {
+    "about": [
+      "",
+      "Maailmassa, jota hallitsevat keskitetyt voimat, techno_punk-liike on kapinallinen teko. Vahvistaaksemme web3-alkuperäisiä sieluja yhdistämme punkin raa'an, tee-se-itse-energian hajautettuun teknologiaan ja tekoälyyn.",
+      "",
+      "Meitä eivät määritä sliipatut grafiikat tai yritysten hype. Meitä määrittelee koodimme, yhteisömme ja sitoutumisemme todella avoimeen internetiin.",
+      "Tämä on enemmän kuin vain projekti; se on kannanotto.",
+      "",
+      "Liity meihin rakentamaan tulevaisuutta, yksi koodirivi kerrallaan.",
+      ""
+    ],
+    "supply": [
+      "",
+      "lohkoketju: Hyperliquid",
+      "tarjonta: 5,184",
+      "tokenit: ERC-721",
+      "mint-hinta: 1 Hype",
+      "sopimusosoite: paljastetaan, kun Discord-palvelin saavuttaa 150 jäsentä.",
+      "",
+      "Reilu julkaisu: Ei valkolistoja, ei riskipääomasijoittajia, ei sisäpiirejä.",
+      "",
+      "Tulevaisuuden suunnitelmia, yhteisön rakentamista ja markkinointia varten 150 NFT:tä mintataan koodilla seuraavaan osoitteeseen:",
+      "TBA",
+      "",
+      "Lisäksi 150 NFT:tä menee techno_punks DAO:n kassaan:",
+      "TBA",
+      "",
+      "Niukkuusmatematiikka:",
+      "5,184 tokenia vs. 5,5 miljardia ihmisinternetinkäyttäjää + 2 miljardia bottia.",
+      "Vuoteen 2027 mennessä botit todennäköisesti ylittävät ihmisinternetinkäyttäjien määrän ensimmäistä kertaa historiassa (perustuen Opus 4:ään).",
+      "Älä unohda. Tämä hetki on sinun pääsylippusi tulevaisuuden digitaaliseen talouteen.",
+      "(NFA)",
+      ""
+    ],
+    "roadmap": [
+      "",
+      "techno_punks ei ennusta tulevaisuutta, he koodaavat sen:",
+      "",
+      "Suorituspuu:",
+      "├── NFT:t",
+      "│   └── Alkuperäisen kokoelman julkaisu",
+      "├── Yhteisö",
+      "│   └── DAO:n muodostaminen ja hallinto",
+      "├── Teknologia",
+      "│   ├── On-chain-metadata ja SVG-renderöinti",
+      "│   └── NFT:iden tekoälyohjattu evoluutio",
+      "└── Ekosysteemi",
+      "    ├── Kumppanuudet ja yhteistyöt",
+      "    └── Hyödyllisyys ja integraatio muihin alustoihin",
+      "",
+      "Tämä tiekartta on elävä asiakirja. Se kehittyy yhteisön palautteen ja teknologisten edistysaskelten perusteella.",
+      "Kommenttisi, postauksesi, tykkäyksesi, sitoumuksesi ja äänesi muovaavat sitä, mitä techno_punksista tulee.",
+      "On-chain-data kertoo todellisen tarinan.",
+      "",
+      "Osallistumistodistus > omistustodistus.",
+      "Arvo = konsensus",
+      ""
+    ],
+    "team": [
+      "",
+      "Voit tulla tiimin jäseneksi hakemalla tiimikanavalla discordissa.",
+      "",
+      "Nykyinen tiimi:",
+      "",
+      "D_s — Konteksti-insinööri",
+      "X_4 — Lakiasiat",
+      "?_2 — Neuvonantaja",
+      ""
+    ],
+    "collection": [
+      "",
+      "Ylisuunniteltujen avatarien aikakaudella, täynnä keinotekoista söpöyttä luomaan parasosiaalisia siteitä, techno_punks valitsee toisen tien: hahmot.",
+      "",
+      "Hahmot, jotka rakensivat internetin. Hahmot, jotka muuttavat ajatuksen koodiksi, aikomuksen monimutkaisiksi järjestelmiksi. Hahmot, jotka yhdistävät ihmisen ja koneen kielen.",
+      "",
+      "//esimerkit://",
+      "",
+      {
+        "type": "svg_block",
+        "html": "<div class=\"project-svg-container\">\n  <div class=\"project-svg-wrapper\">\n    {{SVG_PLACEHOLDER_1}}\n  </div>\n  <div class=\"project-svg-wrapper\">\n    {{SVG_PLACEHOLDER_2}}\n  </div>\n</div>"
+      },
+      "",
+      "(Paina Ctrl+Enter tai Cmd+Enter luodaksesi uusia pareja)",
+      "",
+      "TEKNISET TIEDOT",
+      "  Muoto: [CHAR]_[CHAR]",
+      "  Näyttö: SVG-koodi generoitu tokenin URI:ssa",
+      "  Tila: 100% on-chain, ei IPFS-riippuvuuksia, ei ulkoisia palvelimia",
+      "  Fontti: Arial",
+      "",
+      "Hetkinen! Arial? Miksi? Koska se on anti-designia. Oletus. Järjestelmäfontti, joka kieltäytyy pukeutumasta tai esittämästä. Se on punkkia, koska se ei välitä typografisista trendeistäsi. Raaka toiminnallisuus estetiikan edellä.",
+      "",
+      "MUTAATIOPROTOKOLLA: AKTIIVINEN",
+      "  # Omistajat voivat muokata NFT:n värejä älysopimuksen funktiokutsuilla. Sinun NFT, sinun säännöt.",
+      "  # DIY-etiikka koodattu solidityyn.",
+      "",
+      "///VAROITUS: SAATTAA AIHEUTTAA AITOA IHMISYHTEYTTÄ///",
+      "",
+      "Älä anna muiden johtaa harhaan:",
+      "",
+      "Tämä ei ole taidetta.",
+      "Tämä ei ole fiksua.",
+      "Tämä ei ole ainutlaatuista.",
+      "Tämä ei ole minimaalista.",
+      "",
+      "Se on vain Punkkia. Puhtaimmassa muodossaan.",
+      ""
+    ],
+    "links": [
+      "",
+      "x.com/squattedaccount",
+      "github.com/squattedaccount",
+      "discord.com/invite/DFRcYgJGag",
+      ""
+    ],
+    "legal": [
+      "",
+      "techno_punks jaetaan [[VPL]]:n ehtojen mukaisesti.",
+      "Projekti on pääasiassa yhteisöjohtoinen; suunta ja kehitys voivat muuttua yhteisön panoksen perusteella.",
+      "Käyttämällä, olemalla vuorovaikutuksessa, minttaamalla tai osallistumalla techno_punksiin teet sen täysin omalla vastuullasi.",
+      "Kaikkia tokeniin liittyviä vuorovaikutuksia säätelee Ethereum-verkon koodikanta. Jokainen vuorovaikuttaja tekee sen omalla vastuullaan.",
+      "Toimivuudesta, arvosta tai tuloksista ei ole takeita, takuita tai lupauksia.",
+      "Mikään yksilö tai yhteisö ei ole vastuussa mistään menetyksistä, vahingoista tai seurauksista, jotka johtuvat osallistumisestasi.",
+      "Tämä on kokeellinen, luova, digitaalinen projekti. Ei taloudellista tai oikeudellista neuvontaa.",
+      "",
+      "Jos sinulla on huolia projektin luonteesta, ota yhteyttä suoraan Satoshi Nakamotoon. Onnea matkaan.",
+      ""
+    ],
+    "lang": [
+      "",
+      "Vaihda kieli käyttämällä:",
+      "lang [kielikoodi]",
+      "",
+      "Esimerkki: lang fi asettaa kielen suomeksi",
+      "",
+      "Saatavilla olevat kielet:",
+      "en - Englanti",
+      "es - Espanja",
+      "de - Saksa",
+      "zh - Kiina",
+      ""
+    ]
+  },
+  "terminal": {
+    "welcome": "Tervetuloa techno_punksiin. Kirjoita [help] nähdäksesi käytettävissä olevat komennot.",
+    "version": "techno_punks Terminal v{{version}}",
+    "info": {
+      "noOwnedNFTs": "Et omista yhtään NFT:tä tästä kokoelmasta.",
+      "ownedNFTs": "Omistetut NFT:t:",
+      "totalNFTs": "Kokoelman NFT:t yhteensä: {{count}}",
+      "currentLanguage": "Nykyinen kieli on: {{lang}}",
+      "fetchingStatus": "Haetaan kokoelman tilaa...",
+      "checkingTotalSupply": "Tarkistetaan kokonaistarjontaa...",
+      "checkingMintedCount": "Tarkistetaan mintattujen määrää...",
+      "checkingPrice": "Tarkistetaan hintaa...",
+      "checkingOwner": "Tarkistetaan tokenin #{{tokenId}} omistajaa...",
+      "checkingColors": "Tarkistetaan tokenin #{{tokenId}} värejä...",
+      "colorsForToken": "Värit tokenille #{{tokenId}}:",
+      "mintStart": "Starting mint process for {{quantity}} NFT(s)...",
+      "approveTransaction": "You will need to approve the transaction in your wallet.",
+      "approveTransactions": "You will need to approve each transaction in your wallet.",
+      "mintedToken": "Minted Token #{{tokenId}}",
+      "customizationStart": "Starting color customization for {{count}} NFT(s)...",
+      "customizingToken": "Customizing Token #{{tokenId}} ({{i}} of {{count}})...",
+      "metaMaskRequired": "MetaMask not detected. Please install the browser extension from https://metamask.io/download/ to continue.",
+      "transactionTakingLong": " Transaction taking longer than expected (2+ minutes). Please wait...",
+      "contactingBlockchain": "Connecting to Hyperliquid network..."
+    },
+    "success": {
+      "minted": "Mintattu onnistuneesti {{count}} NFT:tä!",
+      "colorsUpdated": "Onnistui: Tokenin #{{tokenId}} värit on päivitetty.",
+      "mintedTokensList": "Mintatut tokenit:"
+    },
+    "error": {
+      "unknownCommand": "Tuntematon komento: {{commandName}}",
+      "noHelp": "Ei ohjetta saatavilla komennolle '{{commandName}}'.",
+      "unknownCollection": "Virhe: Tuntematon kokoelma '{{collectionName}}'. Tarkoitatko 'technopunks'?",
+      "invalidQuantity": "Virhe: Voit mintata vain 1-20 NFT:tä kerrallaan.",
+      "failedToLoadWinamp": "Winampin lataus epäonnistui. Katso konsoli lisätietoja varten.",
+      "failedToLoadTheme": "Teeman '{{themeName}}' lataus epäonnistui.",
+      "failedToSetCustomTheme": "Mukautetun teeman asetus epäonnistui: {{message}}",
+      "failedToLoadScript": "Skriptin lataus epäonnistui: {{src}}",
+      "failedToLoadSVG": "SVG:n lataus epäonnistui: {{status}}",
+      "invalidMintQuantity": "Error: You can only mint between 1 and 20 NFTs at a time.",
+      "invalidBgColor": "Error: Invalid background color '{{bgColor}}'. Please use a 6-digit hex code (e.g., #RRGGBB).",
+      "invalidTextColor": "Error: Invalid text color '{{textColor}}'. Please use a 6-digit hex code (e.g., #RRGGBB).",
+      "setUsage": "Error: Incorrect usage.",
+      "noWinamp": "Music player is not available.",
+      "viewInit": "Error initializing terminal view: {{message}}",
+      "walletNotFound": "Wallet '{{walletName}}' not found. Please check the name and try again.",
+      "svgLoadFailed": "Error loading SVG: {{message}}"
+    }
+  },
+  "web3": {
+    "success": {
+      "walletConnected": "Lompakko yhdistetty onnistuneesti. Tili: {{account}}",
+      "walletDisconnected": "Lompakko katkaistu. Vaihtaaksesi lompakkoa, käytä selainlaajennustasi ennen uudelleenyhdistämistä."
+    },
+    "info": {
+      "networkAdded": "Verkko {{chainName}} lisätty MetaMaskiin.",
+      "networkSwitched": "Vaihdettu {{chainName}}-verkkoon.",
+      "disconnecting": "Katkaistaan lompakon yhteys...",
+      "connecting": "Yhdistetään lompakkoon... Hyväksy yhteys lompakkolaajennuksessasi.",
+      "fetchingNFTs": "Haetaan NFT:itäsi...",
+      "noNFTsFound": "Tällä osoitteella ei löytynyt NFT:itä.",
+      "foundNFTs": "Löytyi {{count}} NFT:tä:",
+      "sendingCustomization": "Lähetetään mukautuspyyntöä Token ID:lle #{{tokenId}}...",
+      "txSent": "Transaktio lähetetty! Hash: {{hash}}",
+      "customizationSuccess": "Token ID:n #{{tokenId}} mukautus onnistui. Transaktio vahvistettu: {{txHash}}",
+      "walletAlreadyConnected": "Wallet is already connected. Account: {{account}}",
+      "progress": "{{progressMessage}}",
+      "colorTxApproved": "Color transaction for Token #{{tokenId}} approved. Waiting for confirmation...",
+      "viewOnExplorer": "View on Hyperscan",
+      "fetchingCollectionInfo": "Fetching collection info from Hyperliquid..."
+    },
+    "progress": {
+      "preparingTx": "Valmistellaan transaktiota... Vahvista lompakossasi.",
+      "preparingBatchTx": "Valmistellaan erätransaktiota {{quantity}} NFT:lle... Vahvista lompakossasi.",
+      "txSubmitted": "Transaktio lähetetty Hyperliquidiin: {{hash}}",
+      "batchTxSubmitted": "Erätransaktio lähetetty Hyperliquidiin: {{hash}} ({{quantity}} NFT:tä)",
+      "txConfirmed": "Transaktio vahvistettu! Käsitellään mintattuja tokeneita...",
+      "batchTxConfirmed": "Erätransaktio vahvistettu! Käsitellään {{quantity}} mintattua tokenia...",
+      "txTimeout": "Web3-aikakatkaisu saavutettu, mutta transaktio {{hash}} saattaa silti olla käsittelyssä...",
+      "batchTxTimeout": "Web3-aikakatkaisu saavutettu, mutta erätransaktio {{hash}} ({{quantity}} NFT:tä) saattaa silti olla käsittelyssä...",
+      "stillWaiting": "Odotetaan edelleen vahvistusta... ({{elapsed}}s kulunut) - {{hash}}",
+      "minting": "Mintataan NFT {{i}} / {{quantity}}... Vahvista transaktio lompakossasi.",
+      "txApproved": "Transaktio NFT:lle {{i}} hyväksytty. Odotetaan vahvistusta..."
+    },
+    "status": {
+      "title": "Kokoelman tiedot",
+      "name": "Nimi",
+      "contractAddress": "Sopimusosoite",
+      "price": "Hinta",
+      "minted": "Mintattu"
+    },
+    "error": {
+      "generic": "Virhe: {{message}}",
+      "connectionDenied": "Yhteys epäonnistui: Käyttäjä epäsi tilin pääsyn.",
+      "noWallet": "Lompakkolaajennusta ei havaittu selaimessasi. Asenna Metamask.",
+      "metaMaskRequired": "MetaMaskia ei havaittu. Asenna selainlaajennus osoitteesta https://metamask.io/download/ jatkaaksesi.",
+      "addNetwork": "Verkon {{chainName}} lisääminen epäonnistui.",
+      "notConnected": "Virhe: Lompakkoa ei ole yhdistetty. Käytä 'connect'-komentoa yhdistääksesi lompakkosi.",
+      "notConnectedBeforeMint": "Virhe: Lompakkoa ei ole yhdistetty. Käytä 'connect'-komentoa yhdistääksesi lompakkosi ennen minttaamista.",
+      "notOwner": "Virhe: Et ole Token ID:n #{{tokenId}} omistaja. Voit mukauttaa vain omistamiasi NFT:itä.",
+      "tokenNotFound": "Virhe: Token ID:tä #{{tokenId}} ei ole olemassa.",
+      "fetchInfo": "Tietojen haku epäonnistui: {{message}}",
+      "mintRejected": "NFT:n {{count}} minttaus epäonnistui: Käyttäjä hylkäsi transaktion.",
+      "mintFailed": "Minttausprosessi epäonnistui NFT:n {{count}} kohdalla. Katso konsoli lisätietoja varten.",
+      "fetchColors": "Värien haku Token ID:lle #{{tokenId}} epäonnistui. Se ei välttämättä ole olemassa.",
+      "customizationRejected": "Mukautus epäonnistui: Käyttäjä hylkäsi transaktion.",
+      "customizationFailed": "Mukautus epäonnistui. Katso konsoli lisätietoja varten.",
+      "fetchFont": "Fontin haku Token ID:lle #{{tokenId}} epäonnistui. Se ei välttämättä ole olemassa.",
+      "setMissingArgs": "Pakolliset argumentit puuttuvat. Käytä 'help set' saadaksesi lisätietoja käytöstä.",
+      "setInvalidArgs": "Annetut argumentit ovat virheellisiä. Käytä 'help set' saadaksesi lisätietoja käytöstä."
+    }
+  },
+  "verify": {
+    "connecting": "Yhdistetään lompakkoon...",
+    "connectionFailed": "Lompakon yhdistäminen epäonnistui. Yritä uudelleen.",
+    "signMessage": "Allekirjoita viesti lompakossasi jatkaaksesi.",
+    "sending": "Lähetetään vahvistusta palvelimelle...",
+    "success": "Vahvistus onnistui: {{message}}",
+    "failed": "Vahvistus epäonnistui: {{error}}",
+    "checkingStatus": "Tarkistetaan vahvistuksen tilaa...",
+    "statusVerified": "Tämä lompakko on vahvistettu.",
+    "discordUser": "Discord-käyttäjä: {{username}} (ID: {{discordId}})",
+    "walletAddress": "Lompakon osoite: {{walletAddress}}",
+    "verifiedOn": "Vahvistettu: {{timestamp}}",
+    "statusNotVerified": "Tätä lompakkoa ei ole vahvistettu.",
+    "startProcess": "Aloita vahvistusprosessi käyttämällä 'verify <sinun_discord_id>'.",
+    "statusCheckFailed": "Vahvistuksen tilan tarkistus epäonnistui.",
+    "invalidSubcommand": "Virheellinen alikomento. Käytä 'verify check' tarkistaaksesi tilan, tai 'verify <sinun_discord_id>' aloittaaksesi."
+  }
+}

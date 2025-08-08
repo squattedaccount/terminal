@@ -1,0 +1,543 @@
+{
+  "welcome": "Willkommen im Abgrund. Tippe [hilfe], um zu interagieren.",
+  "commandNotFound": "Befehl nicht gefunden: ",
+  "availableCommands": "Verfügbare Befehle: ",
+  "videoStopped": "Video angehalten. Rückkehr zur normalen CLI-Ansicht.",
+  "videoThemeWarning": "WARNUNG: Bitte wechsle zum dunklen Thema, bevor du das Video abspielst. Benutze den Themen-Umschalter zum Wechseln.",
+  "currentTheme": "Aktuelles Thema: ",
+  "languageChanged": "Sprache erfolgreich geändert.",
+  "invalidLanguage": "Ungültiger Sprachcode. Benutze den 'language'-Befehl, um verfügbare Optionen zu sehen.",
+  "help": {
+    "title": "Verfügbare Befehle",
+    "general": {
+      "header": "Verfügbare Befehle:",
+      "footer": "Für weitere Details zu einem bestimmten Befehl, tippe: help <befehlsname>"
+    },
+    "categories": {
+      "core": "Kernbefehle",
+      "info": "Info-Befehle",
+      "tools": "Werkzeugbefehle",
+      "web3": "Web3-Befehle",
+      "media": "Medienbefehle",
+      "other": "Andere Befehle"
+    },
+    "help": {
+      "summary": "zeigt eine Liste der verfügbaren Befehle an.",
+      "detailed": {
+        "description": "Zeigt Hilfeinformationen für Befehle an.",
+        "usage": "help [Befehl]",
+        "examples": []
+      }
+    },
+    "about": {
+      "summary": "Erfahre mehr über die techno_punks Bewegung",
+      "detailed": {
+        "description": "Zeigt Informationen über das techno_punks Projekt an.",
+        "usage": "about"
+      }
+    },
+    "legal": {
+      "summary": "rechtliche Hinweise und Haftungsausschlüsse",
+      "detailed": {
+        "description": "Zeigt rechtliche Hinweise und Haftungsausschlüsse an.",
+        "usage": "legal"
+      }
+    },
+    "roadmap": {
+      "summary": "Projekt-Roadmap anzeigen",
+      "detailed": {
+        "description": "Zeigt die Projekt-Roadmap an.",
+        "usage": "roadmap"
+      }
+    },
+    "team": {
+      "summary": "das Team hinter dem Projekt",
+      "detailed": {
+        "description": "Zeigt Informationen über das Projektteam an.",
+        "usage": "team"
+      }
+    },
+    "links": {
+      "summary": "eine Liste nützlicher Links",
+      "detailed": {
+        "description": "Zeigt eine Liste nützlicher Links zum Projekt an.",
+        "usage": "links"
+      }
+    },
+    "collection": {
+      "summary": "erkunde die Kollektion",
+      "detailed": {
+        "description": "Zeigt eine zufällig generierte Kollektion von Charakterpaaren an.",
+        "usage": "collection"
+      }
+    },
+    "supply": {
+      "summary": "Token-Angebots- und Verteilungsinformationen",
+      "detailed": {
+        "description": "Zeigt Informationen über das Token-Angebot und die Verteilung an.",
+        "usage": "supply"
+      }
+    },
+    "connect": {
+      "summary": "verbinde deine MetaMask-Wallet",
+      "detailed": {
+        "description": "Verbindet deine MetaMask-Wallet mit der Anwendung.",
+        "usage": "connect",
+        "examples": []
+      }
+    },
+    "clear": {
+      "summary": "löscht den Terminalbildschirm",
+      "detailed": {
+        "description": "Löscht den Terminalbildschirm und zeigt die Willkommensnachricht an.",
+        "usage": "clear",
+        "examples": [
+          "clear"
+        ]
+      }
+    },
+    "cls": {
+      "summary": "Alias für clear",
+      "detailed": {
+        "description": "Alias für den Befehl clear.",
+        "usage": "cls",
+        "examples": [
+          "cls"
+        ]
+      }
+    },
+    "winamp": {
+      "summary": "startet den Musikplayer",
+      "detailed": {
+        "description": "Schaltet die Sichtbarkeit des Musikplayers um.",
+        "usage": "winamp",
+        "examples": [
+          "winamp"
+        ]
+      }
+    },
+    "lang": {
+      "summary": "Zeigt die aktuelle Sprache an oder legt eine neue fest.",
+      "detailed": {
+        "description": "Zeigt die aktuelle Sprache an oder legt eine neue Sprache für das Terminal fest.",
+        "usage": "lang [Sprachcode]",
+        "examples": [
+          "lang (zeigt die aktuelle Sprache an)",
+          "lang de (legt die Sprache auf Deutsch fest)"
+        ],
+        "footer": "\nVerfügbare Sprachen:\n  en   Englisch\n  es   Spanisch\n  de   Deutsch\n  zh   Chinesisch"
+      },
+      "error": {
+        "invalidCode": "Fehler: Ungültiger oder nicht unterstützter Sprachcode.",
+        "suggestion": "Tippe 'help lang' für eine Liste der verfügbaren Sprachen."
+      }
+    },
+    "mint": {
+      "summary": "präge neue techno_punks NFTs",
+      "detailed": {
+        "description": "Prägt einen oder mehrere techno_punks NFTs in deine verbundene Wallet.",
+        "usage": "mint techno_punks [anzahl]",
+        "examples": [
+          "mint techno_punks 1",
+          "mint techno_punks 20"
+        ]
+      },
+      "error": {
+        "invalidQuantity": "Error: You can only mint between 1 and 20 NFTs at a time.",
+        "walletNotConnected": "Error: Wallet not connected. Please use the 'connect' command to link your wallet before minting.",
+        "missingArgs": "Error: Missing required arguments.\nUsage: mint techno_punks [quantity] [--bg #hexcolor] [--text #hexcolor]\nFor more details, use: help mint"
+      }
+    },
+    "list": {
+      "summary": "liste deine NFTs auf",
+      "detailed": {
+        "description": "Listet die techno_punks NFTs auf, die du besitzt.",
+        "usage": "list",
+        "examples": []
+      }
+    },
+    "set": {
+      "summary": "lege eine benutzerdefinierte Farbe für deinen NFT fest",
+      "detailed": {
+        "description": "Um eine benutzerdefinierte Farbe festzulegen, verwende:",
+        "usage": "set <token_id> [--bg <hex_farbe>] [--text <hex_farbe>]",
+        "examples": [
+          "set 123 --text #123456",
+          "set 456 --bg #abcdef",
+          "set 789 --bg #ff0000 --text #00ff00"
+        ]
+      },
+      "error": {
+        "missingArgs": "Error: Missing arguments. Use 'help set' for more details.",
+        "invalidArgs": "Error: You must specify at least one customization, like --bg or --text."
+      }
+    },
+    "status": {
+      "summary": "Onchain-Sammlungsstatus",
+      "detailed": {
+        "description": "Ruft den aktuellen On-Chain-Status der NFT-Sammlung ab und zeigt ihn an.",
+        "usage": "status",
+        "examples": [
+          "status"
+        ]
+      }
+    },
+    "disconnect": {
+      "summary": "trennt die aktuell verbundene Wallet",
+      "detailed": {
+        "description": "Trennt die aktuell verbundene Wallet von der Anwendung.",
+        "usage": "disconnect",
+        "examples": [
+          "disconnect"
+        ]
+      }
+    },
+    "verify": {
+      "summary": "NFT-Besitz für Discord-Rolle verifizieren",
+      "detailed": [
+        "",
+        "Benutzung: verify [unterbefehl]",
+        "",
+        "Verbindet deine Wallet mit deinem Discord-Konto, um spezielle Rollen zu erhalten.",
+        "",
+        "Unterbefehle:",
+        "  verify <discord-id>   Startet den Verifizierungsprozess.",
+        "  verify check            Überprüft deinen aktuellen Verifizierungsstatus.",
+        "",
+        "Um deine Discord-ID zu erhalten, gehe zum Server und tippe: !my-id",
+        ""
+      ]
+    },
+    "verify_example": ["verify 1234567891012"],
+    "specific": {
+      "noDescription": "No description available.",
+      "noUsage": "No usage info.",
+      "usagePrefix": "Usage:",
+      "examplesTitle": "Examples:"
+    },
+    "get-colors": {
+      "summary": "get the colors for a specific NFT",
+      "detailed": {
+        "description": "Gets the current background and text colors for a specific NFT.",
+        "usage": "get-colors <token_id>",
+        "examples": [
+          "get-colors 123"
+        ]
+      }
+    },
+    "draw": {
+      "summary": "engages the experimental drawing mode",
+      "detailed": {
+        "description": "Engages the experimental drawing mode.",
+        "usage": "draw",
+        "examples": []
+      }
+    }
+  },
+  "terminal": {
+    "welcome": "Willkommen im Abgrund. Tippe [hilfe], um zu interagieren.",
+    "version": "techno_punks Terminal v{{version}}",
+    "info": {
+      "noOwnedNFTs": "Du besitzt keine NFTs aus dieser Sammlung.",
+      "mintStart": "Starte Prägeprozess für {{quantity}} NFT(s)...",
+      "approveTransactions": "Du musst jede Transaktion in deiner Wallet bestätigen.",
+      "mintedToken": "Geprägter Token #{{tokenId}} ({{pair}})",
+      "customizationStart": "Starte Farbanpassung für {{count}} NFT(s)...",
+      "customizingToken": "Passe Token #{{tokenId}} an ({{i}} von {{count}})...",
+      "approveTransaction": "You will need to approve the transaction in your wallet.",
+      "metaMaskRequired": "MetaMask not detected. Please install the browser extension from https://metamask.io/download/ to continue.",
+      "transactionTakingLong": " Transaction taking longer than expected (2+ minutes). Please wait...",
+      "contactingBlockchain": "Connecting to Hyperliquid network..."
+    },
+    "success": {
+      "minted": "{{count}} NFT(s) erfolgreich geprägt!",
+      "colorsUpdated": "Erfolg: Farben für Token #{{tokenId}} aktualisiert.",
+      "mintedTokensList": "Minted tokens:"
+    },
+    "error": {
+      "unknownCommand": "Unbekannter Befehl: {{commandName}}",
+      "noHelp": "Keine Hilfe für '{{commandName}}' verfügbar.",
+      "unknownCollection": "Fehler: Unbekannte Sammlung '{{collectionName}}'. Meintest du 'technopunks'?",
+      "invalidMintQuantity": "Fehler: Du kannst nur zwischen 1 und 10 NFTs auf einmal prägen.",
+      "invalidBgColor": "Fehler: Ungültige Hintergrundfarbe '{{bgColor}}'. Bitte verwende einen 6-stelligen Hex-Code (z.B. #RRGGBB).",
+      "invalidTextColor": "Fehler: Ungültige Textfarbe '{{textColor}}'. Bitte verwende einen 6-stelligen Hex-Code (z.B. #RRGGBB).",
+      "noWinamp": "Musikplayer ist nicht verfügbar.",
+      "viewInit": "Fehler beim Initialisieren der Terminal-Ansicht: {{message}}",
+      "setUsage": "Error: Incorrect usage.",
+      "walletNotFound": "Wallet '{{walletName}}' not found. Please check the name and try again.",
+      "svgLoadFailed": "Error loading SVG: {{message}}",
+      "failedToSetCustomTheme": "Failed to set custom theme: {{message}}",
+      "failedToLoadScript": "Failed to load script: {{src}}",
+      "failedToLoadSVG": "Failed to load SVG: {{status}}"
+    }
+  },
+  "web3": {
+    "success": {
+      "walletConnected": "Wallet erfolgreich verbunden. Konto: {{account}}",
+      "walletDisconnected": "Wallet disconnected. To switch wallets, please use your browser extension before reconnecting."
+    },
+    "info": {
+      "walletAlreadyConnected": "Wallet ist bereits verbunden. Konto: {{account}}",
+      "progress": "{{progressMessage}}",
+      "colorTxApproved": "Farbtransaktion für Token #{{tokenId}} genehmigt. Warte auf Bestätigung...",
+      "viewOnExplorer": "View on Hyperscan",
+      "noNFTsFound": "You do not own any techno_punks NFTs yet. Use the 'mint' command to get yours!",
+      "fetchingCollectionInfo": "Fetching collection info from Hyperliquid...",
+      "connecting": "Attempting to connect to MetaMask...",
+      "sendingCustomization": "Sending customization request for Token ID #{{tokenId}}...",
+      "txSent": "Transaction sent! Hash: {{hash}}",
+      "customizationSuccess": "Successfully customized Token ID #{{tokenId}}. Transaction confirmed: {{txHash}}"
+    },
+    "progress": {
+      "minting": "Präge NFT {{i}} von {{quantity}}... Bitte bestätige die Transaktion in deiner Wallet.",
+      "txApproved": "Transaktion für NFT {{i}} genehmigt. Warte auf Bestätigung...",
+      "preparingTx": "Preparing transaction... Please confirm in your wallet.",
+      "preparingBatchTx": "Preparing batch transaction for {{quantity}} NFTs... Please confirm in your wallet.",
+      "txSubmitted": "Transaction submitted on Hyperliquid: {{hash}}",
+      "batchTxSubmitted": "Batch transaction submitted on Hyperliquid: {{hash}} ({{quantity}} NFTs)",
+      "txConfirmed": "Transaction confirmed! Processing minted tokens...",
+      "batchTxConfirmed": "Batch transaction confirmed! Processing {{quantity}} minted tokens...",
+      "txTimeout": "Web3 timeout reached, but transaction {{hash}} may still be processing...",
+      "batchTxTimeout": "Web3 timeout reached, but batch transaction {{hash}} ({{quantity}} NFTs) may still be processing...",
+      "stillWaiting": "Still waiting for confirmation... ({{elapsed}}s elapsed) - {{hash}}"
+    },
+    "error": {
+      "generic": "Fehler: {{message}}",
+      "connectionDenied": "Verbindung fehlgeschlagen: Benutzer hat den Kontozugriff verweigert.",
+      "noWallet": "Wallet-Erweiterung in deinem Browser nicht erkannt. Bitte installiere Metamask.",
+      "addNetwork": "Hinzufügen des {{chainName}}-Netzwerks fehlgeschlagen.",
+      "notConnected": "Bitte verbinde zuerst deine Wallet mit dem 'connect'-Befehl.",
+      "fetchInfo": "Abrufen der Informationen fehlgeschlagen: {{message}}",
+      "mintRejected": "Prägen von NFT {{count}} fehlgeschlagen: Transaktion vom Benutzer abgelehnt.",
+      "mintFailed": "Prägeprozess bei NFT {{count}} fehlgeschlagen. Siehe Konsole für Details.",
+      "fetchColors": "Abrufen der Farben für Token-ID #{{tokenId}} fehlgeschlagen. Sie existiert möglicherweise nicht.",
+      "customizationRejected": "Anpassung fehlgeschlagen: Transaktion vom Benutzer abgelehnt.",
+      "customizationFailed": "Anpassung fehlgeschlagen. Siehe Konsole für Details.",
+      "fetchFont": "Abrufen der Schriftart für Token-ID #{{tokenId}} fehlgeschlagen. Sie existiert möglicherweise nicht.",
+      "metaMaskRequired": "MetaMask not detected. Please install the browser extension from https://metamask.io/download/ to continue.",
+      "notConnectedBeforeMint": "Error: Wallet not connected. Please use the 'connect' command to link your wallet before minting.",
+      "notOwner": "Error: You are not the owner of Token ID #{{tokenId}}. You can only customize NFTs that you own.",
+      "tokenNotFound": "Error: Token ID #{{tokenId}} does not exist.",
+      "setMissingArgs": "Missing required arguments. Use 'help set' for usage information.",
+      "setInvalidArgs": "Invalid arguments provided. Use 'help set' for usage information."
+    },
+    "status": {
+      "title": "Collection Info",
+      "name": "Name",
+      "contractAddress": "Contract Address",
+      "price": "Price",
+      "minted": "Minted"
+    }
+  },
+  "commands": {
+    "command_descriptions": {
+      "help": "verfügbare Befehle und deren Beschreibungen auflisten",
+      "clear": "den Terminalbildschirm löschen",
+      "cls": "Alias für clear",
+      "about": "allgemeine Informationen anzeigen",
+      "roadmap": "Community-Roadmap anzeigen",
+      "team": "Projektmitwirkende auflisten",
+      "legal": "Nutzungsbedingungen",
+      "links": "externe Ressourcen",
+      "lang": "Weltweiter Modus und globale Codes",
+      "minting": "Vertrags- und Prägedetails",
+      "collection": "Projektspezifikationen anzeigen"
+    },
+    "about": [
+      "",
+      "techno_punks ist eine KI-gestützte Techno-Punk-Bewegung: eine Multichain-Marke, um Web3-native Seelen zu stärken.",
+      "",
+      "Wir sind:",
+      "Geboren auf Hiperliquid, aber werden darüber hinaus wachsen.",
+      "Ein VPL-basierter Post-AGI-Überlebensclub /",
+      "Multikulturelle Gemeinschaft von Vibe-Hackern.",
+      ""
+    ],
+    "minting_guide": [
+      "Um einen NFT zu prägen, verwende die folgenden Befehle:",
+      "- 'mint info': Erhalte Details zur Sammlung.",
+      "- 'mint collection': Sieh dir die Sammlung auf OpenSea an.",
+      "- 'mint': Starte den Prägeprozess."
+    ],
+    "distro": [
+      "",
+      "blockchain: Ethereum",
+      "angebot: 5.124",
+      "tokens: ERC-721-Standard",
+      "prägepreis: 0.03 ETH",
+      "vertragsadresse: wird bekannt gegeben, wenn der Discord-Server 150 Mitglieder erreicht.",
+      "",
+      "Fairer Start: Keine Whitelists, keine VCs, keine inneren Kreise.",
+      "Um Web2-Influencer zu vermeiden, ist das Prägen nur über Etherscan möglich.",
+      "",
+      "Für zukünftige Pläne und Marketing werden 150 NFTs per Code an die folgende Adresse geprägt:",
+      "TBA",
+      "",
+      "Weitere 150 NFTs gehen in die techno_punks DAO-Schatzkammer:",
+      "TBA",
+      "",
+      "NFA:",
+      "Knappheitsrechnung: 5.124 Token vs. 4,6 Mrd. Internetnutzer.",
+      "Autonome Agenten werden bald mehr handeln als Menschen.",
+      "Dies ist dein Einstiegskapital in die zukünftige digitale Wirtschaft.",
+      ""
+    ],
+    "roadmap": [
+      "",
+      "techno_punks sagen die Zukunft nicht voraus. Sie programmieren sie:",
+      "",
+      "Ausführungsbaum:",
+      "├── NFTs",
+      "│   └── Start der ersten Sammlung",
+      "├── Community",
+      "│   ├── Guild.xyz-Integration",
+      "│   └── Discord DAO",
+      "├── Infrastruktur & Ökosystem",
+      "│   ├── Benutzerdefinierter Marktplatz (erwarte Chaos)",
+      "│   ├── KI-Reich: Schwarmnetzwerke und autonome Agenten",
+      "│   ├── Open-Source-Web3-Terminal-Entwicklung",
+      "│   └── Strategische Partnerschaften",
+      "├── Inhalt",
+      "│   ├── Podcasts & Spaces (Verschwörung & Fake News)",
+      "│   ├── Workshops & Hackathons (Potenzial für Ethereum-Re-Merge)",
+      "│   ├── Raves & Media Hacks (spirituelle und virale Kriegsführung)",
+      "├── Tokenomics",
+      "│   ├── Airdrops (ERC-20, ERC-721, ERC-1155)",
+      "│   └── Multichain-Markenerweiterungen",
+      "",
+      "*Die Roadmap ist nicht festgelegt und keine Garantie*",
+      "Beiträge, Absichten und Entscheidungen der Community können die Richtung radikal formen.",
+      "Deine Kommentare, Beiträge, Likes, Commits und Stimmen werden gestalten, was aus techno_punks wird.",
+      "On-Chain-Daten werden die wahre Geschichte erzählen.",
+      ""
+    ],
+    "team": [
+      "",
+      "Du kannst Teammitglied werden, indem du dich im Teamkanal auf Discord bewirbst.",
+      "",
+      "Aktuelles Team:",
+      "",
+      "D_s — Lead Design",
+      "X_4 — Rechtliches",
+      "?_2 — Berater",
+      "",
+      "Proof-of-participation > proof-of-investment.",
+      "Wert = Konsens",
+      ""
+    ],
+    "collection": [
+      "",
+      "In einer Ära überdesignter Avatare, voller künstlicher Niedlichkeit, um parasoziale Bindungen zu erzeugen, wählen die techno_punks einen anderen Weg: die Charaktere.",
+      "",
+      "Charaktere, die das Internet gebaut haben. Charaktere, die Gedanken in Code, Absichten in komplexe Systeme verwandeln. Charaktere, die menschliche und maschinelle Sprache verbinden.",
+      "",
+      "//beispiele://",
+      "",
+      {
+        "type": "svg_block",
+        "html": "<div class=\"project-svg-container\">\n  <div class=\"project-svg-wrapper\">\n    {{SVG_PLACEHOLDER_1}}\n  </div>\n  <div class=\"project-svg-wrapper\">\n    {{SVG_PLACEHOLDER_2}}\n  </div>\n</div>"
+      },
+      "",
+      "(Drücke Strg+Enter oder Cmd+Enter, um neue Paare zu generieren)",
+      "",
+      "TECHNISCHE SPEZIFIKATIONEN",
+      "  Format: [CHAR]_[CHAR]",
+      "  Anzeige: SVG-Code, generiert in der Token-URI",
+      "  Status: 100% on-chain, keine IPFS-Abhängigkeiten, keine externen Server",
+      "  Schriftart: Arial",
+      "",
+      "Moment! Arial? Warum? Weil es Anti-Design ist. Der Standard. Die Systemschrift, die sich weigert, sich zu verkleiden oder vorzugeben. Es ist Punk, weil es sich einen Dreck um deine Typografie-Trends schert. Rohe Funktionalität vor Ästhetik.",
+      "",
+      "MUTATIONSPROTOKOLL: AKTIV",
+      "  # Besitzer können NFT-Farben über Smart-Contract-Funktionsaufrufe ändern. Dein NFT, deine Regeln.",
+      "  # DIY-Ethos in Solidity codiert.",
+      "",
+      "///WARNUNG: KANN ZU ECHTEN MENSCHLICHEN VERBINDUNGEN FÜHREN///",
+      "",
+      "Lass dich nicht von anderen täuschen:",
+      "",
+      "Das ist keine Kunst.",
+      "Das ist nicht klug.",
+      "Das ist nicht einzigartig.",
+      "Das ist nicht minimalistisch.",
+      "",
+      "Es ist einfach Punk. In seiner reinsten Form.",
+      ""
+    ],
+    "links": [
+      "",
+      "x.com/squattedaccount",
+      "github.com/squattedaccount",
+      "discord.com/invite/DFRcYgJGag",
+      ""
+    ],
+    "legal": [
+      "",
+      "techno_punks wird unter den Bedingungen der [[VPL]] vertrieben.",
+      "Das Projekt wird hauptsächlich von der Community geleitet; Richtung und Entwicklung können sich je nach kollektivem Input entwickeln.",
+      "Durch die Nutzung, Interaktion, Prägung oder Mitwirkung an techno_punks handelst du vollständig auf eigenes Risiko.",
+      "Alle tokenbezogenen Interaktionen unterliegen der Codebasis des Ethereum-Netzwerks. Jeder, der interagiert, tut dies auf eigenes Risiko.",
+      "Es gibt keine Garantien, Gewährleistungen oder Versprechungen hinsichtlich Funktionalität, Wert oder Ergebnis.",
+      "Keine Einzelperson oder Einrichtung haftet für Verluste, Schäden oder Konsequenzen, die sich aus deiner Teilnahme ergeben.",
+      "Dies ist ein experimentelles, kreatives digitales Projekt. Keine Finanz- oder Rechtsberatung.",
+      "",
+      "Bei Bedenken bezüglich der Art des Projekts wende dich bitte direkt an Satoshi Nakamoto. GL.",
+      ""
+    ],
+    "lang": [
+      "",
+      "Um die Sprache zu ändern, verwende:",
+      "lang [Sprachcode]",
+      "",
+      "Beispiel: lang de, um die Sprache auf Deutsch einzustellen",
+      "",
+      "Verfügbare Sprachen:",
+      "en - Englisch",
+      "es - Spanisch",
+      "de - Deutsch",
+      "zh - Chinesisch",
+      ""
+    ],
+    "supply": [
+      "",
+      "Blockchain: Hyperliquid",
+      "Angebot: 5.184",
+      "Token: ERC-721",
+      "Mint-Preis: 1 Hype",
+      "Vertragsadresse: Wird bekannt gegeben, wenn der Discord-Server 150 Mitglieder erreicht.",
+      "",
+      "Fairer Start: Keine Whitelists, keine VCs.",
+      "",
+      "Für zukünftige Pläne, Community-Aufbau und Marketing werden 150 NFTs per Code an die folgende Adresse gemintet:",
+      "TBA",
+      "",
+      "Weitere 150 NFTs gehen in die techno_punks DAO-Treasury:",
+      "TBA",
+      "",
+      "Knappheits-Mathematik:",
+      "5.184 Token vs. 5,5 Milliarden menschliche Internetnutzer + 2 Milliarden Bots.",
+      "Bis 2027 werden Bots voraussichtlich erstmals mehr als menschliche Internetnutzer sein.",
+      "Nicht vergessen: Dieser Moment ist dein Einstiegskapital in die zukünftige digitale Wirtschaft.",
+      "(NFA)",
+      ""
+    ]
+  },
+  "currentLanguage": "Current language is:",
+  "verify": {
+    "connecting": "Connecting to wallet...",
+    "connectionFailed": "Wallet connection failed. Please try again.",
+    "signMessage": "Please sign the message in your wallet to continue.",
+    "sending": "Sending verification to server...",
+    "success": "Verification successful: {{message}}",
+    "failed": "Verification failed: {{error}}",
+    "checkingStatus": "Checking verification status...",
+    "statusVerified": "This wallet is verified.",
+    "discordUser": "Discord User: {{username}} (ID: {{discordId}})",
+    "walletAddress": "Wallet Address: {{walletAddress}}",
+    "verifiedOn": "Verified On: {{timestamp}}",
+    "statusNotVerified": "This wallet is not verified.",
+    "startProcess": "To start the verification process, use 'verify <your_discord_id>'.",
+    "statusCheckFailed": "Failed to check verification status.",
+    "invalidSubcommand": "Invalid subcommand. Use 'verify check' to check status, or 'verify <your_discord_id>' to start."
+  }
+}

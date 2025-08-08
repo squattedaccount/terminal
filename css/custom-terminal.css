@@ -1,0 +1,375 @@
+/* 
+ * Custom Terminal Styles
+ * Uses theme variables from variables.css
+ */
+
+/* Force the background color to prevent any flash of default browser background */
+/* This is important to avoid a flash of unstyled content (FOUC) */
+html, body {
+  background-color: black !important;
+}
+
+/* Global styles for text selection and user interaction */
+.terminal,
+.terminal-output, .terminal-output div, .terminal-output span,
+.terminal-prompt, .terminal-input, .terminal-user-input,
+.terminal-command /* General logged command text */
+{
+  -webkit-touch-callout: text; /* iOS Safari */
+  -webkit-user-select: text;   /* Safari */
+  -khtml-user-select: text;    /* Konqueror HTML */
+  -moz-user-select: text;      /* Firefox */
+  -ms-user-select: text;       /* Internet Explorer/Edge */
+  user-select: text;           /* Non-prefixed version */
+}
+
+/* Apply theme-aware selection colors */
+::selection {
+  background-color: var(--color-highlight-background);
+  color: var(--color-highlight-text);
+}
+
+::-moz-selection {
+  background-color: var(--color-highlight-background);
+  color: var(--color-highlight-text);
+}
+
+/* Theme-specific styling for logged commands */
+html.dark-theme .terminal-command {
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+}
+
+html.light-theme .terminal-command {
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+}
+
+
+
+/**
+ * Custom Terminal CSS
+ * Styling for our custom JavaScript terminal emulator
+ */
+
+/* Main terminal container - the outer container */
+#terminal-container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden; /* Prevent scrollbars on the container */
+  background-color: var(--color-background); /* Use theme variable */
+}
+
+/* Inner terminal */
+#terminal {
+  width: 100%; /* Take up full width of its container */
+  height: 100vh;
+  margin-top: 0px;
+  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-x: auto; /* Retain horizontal scroll if needed, or set to hidden */
+  padding: 0 var(--spacing-m) var(--spacing-m) var(--spacing-m);
+  box-sizing: border-box;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  border: none; /* Removed border */
+  position: relative;
+  z-index: 10;
+  max-width: 950px;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-base);
+  line-height: var(--terminal-base-row-height);
+  letter-spacing: var(--letter-spacing-base);
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari, etc.) */
+#terminal::-webkit-scrollbar {
+  display: none;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+/* No ASCII art border */
+
+/* Terminal output area */
+.terminal-output {
+  padding: calc(3 * var(--terminal-base-row-height)) var(--spacing-xs) 0;
+  margin: 0;
+  /* font-family, font-size, line-height, color inherited from #terminal */
+  background-color: var(--color-background);
+  flex-grow: 1;
+  overflow-y: hidden; /* Scrollbar hidden, scrolling handled by JS */
+  overflow-x: hidden;
+  word-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  display: block;
+}
+
+/* Spacer after welcome message */
+.welcome-spacer {
+  display: block;
+  min-height: 0; /* Reset spacer, padding is now on .terminal-output */
+  margin: 0;
+  padding: 0;
+  content: '';
+}
+
+/* Command output styling */
+.command-output {
+  white-space: normal;
+  user-select: text;
+}
+
+/* Error, success, and warning messages */
+.terminal-error,
+.terminal-success,
+.terminal-warning {
+  white-space: pre-wrap;
+}
+
+.help-line {
+  white-space: pre;
+}
+
+
+.prompt-line {
+  display: flex;
+  align-items: center;
+  min-height: var(--terminal-base-row-height);
+  white-space: pre-wrap;
+  position: relative; /* Essential for cursor positioning */
+  border: none;
+  outline: none;
+}
+
+/* Ensure proper wrapping for long content */
+/* Base style for all direct children of .terminal-output: NO INDENT */
+#terminal > .terminal-output > * {
+  margin: 0;
+  padding: 0;
+  line-height: var(--terminal-base-row-height);
+  min-height: var(--terminal-base-row-height);
+  display: block;
+  box-sizing: border-box;
+}
+
+/* --- Elements that should NOT be indented (padding-left: 0) --- */
+#terminal > .terminal-output > div.welcome-message,
+#terminal > .terminal-output > div.welcome-spacer,
+#terminal > .terminal-output > div.terminal-input-line {
+  padding-left: 0;
+}
+
+/* --- Elements that SHOULD be indented by 35px --- */
+/* General command output */
+
+
+/* Error messages - attempting to force indentation */
+
+
+/* Specifically un-indent historical prompt lines */
+#terminal > .terminal-output > div.historical-prompt-line {
+  padding-left: 0;
+}
+
+/* Input line container */
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 var(--spacing-xs);
+  background-color: var(--color-background);
+  height: var(--terminal-base-row-height); /* Use variable */
+  min-height: var(--terminal-base-row-height); /* Use variable */
+  line-height: var(--terminal-base-row-height); /* Use variable */
+  position: relative;
+}
+
+.terminal-prompt {
+  color: var(--color-text-primary);
+  margin-right: 0;
+  user-select: text;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-base);
+  font-weight: normal;
+  line-height: var(--terminal-base-row-height);
+  display: inline;
+  white-space: pre;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  color: var(--color-text-primary); /* Explicit color */
+  font-family: var(--font-family-mono); /* Explicit font */
+  font-size: var(--font-size-base); /* Explicit font size */
+  line-height: var(--terminal-base-row-height); /* Specific line height for input control */
+  letter-spacing: var(--letter-spacing-base);
+  outline: none;
+  flex-grow: 1;
+  caret-color: transparent; /* Hide the native cursor */
+  padding: 0;
+  margin: 0; /* Consistent spacing, relies on space in prompt string */
+  height: var(--terminal-base-row-height); /* Use variable */
+  min-height: var(--terminal-base-row-height); /* Use variable */
+  vertical-align: top; /* From first rule block */
+  position: relative; /* From the second rule block */
+}
+
+/* Container for the input field */
+.input-container {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+/* User input styling for selectable command lines */
+.terminal-user-input {
+  user-select: text;
+}
+
+/* Command styling */
+.terminal-command {
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+  border: none;
+  line-height: var(--terminal-base-row-height);
+  display: inline; /* Will be overridden to block by .terminal-output > * but good to keep for other potential uses */
+  white-space: pre-wrap;
+}
+
+/* Error, Success, and Warning message styling */
+.terminal-error,
+.terminal-success,
+.terminal-warning {
+  color: var(--color-text-primary);
+  padding: 0;
+  margin: 0;
+  line-height: var(--terminal-base-row-height);
+}
+
+/* Support for SVG and image content */
+.terminal-svg-container,
+.terminal-image-container {
+  margin: var(--spacing-m) 0;
+  max-width: 100%;
+  overflow: hidden;
+  padding: var(--spacing-s);
+  background-color: var(--color-svg-background);
+  /* border: var(--border-base); */ /* Removed to fix thick border issue */
+  transition: var(--transition-theme);
+}
+
+/* SVG wrapper to control theme colors */
+.svg-theme-wrapper {
+  color: var(--color-svg-text);
+  transition: var(--transition-theme);
+}
+
+/* SVG element styling */
+.svg-theme-wrapper svg {
+  color: inherit;
+  fill: currentColor;
+  stroke: currentColor;
+  transition: var(--transition-theme);
+}
+
+/* SVG child elements */
+.svg-theme-wrapper svg * {
+  color: inherit;
+  fill: currentColor;
+  stroke: currentColor;
+  transition: var(--transition-theme);
+}
+
+/* Project output styling */
+.project-output-container {
+  margin: var(--spacing-m) 0;
+  padding: var(--spacing-s);
+  background-color: var(--color-background);
+  border: var(--border-base);
+}
+
+.project-title {
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-s);
+  font-size: var(--font-size-base);
+  font-weight: bold;
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--color-text-primary);
+}
+
+.project-svg-container {
+  margin: var(--spacing-m) 0;
+  padding: var(--spacing-s);
+  background-color: var(--color-background);
+  border-radius: var(--border-radius-base);
+}
+
+.project-description {
+  margin-top: var(--spacing-s);
+  color: var(--color-text-primary);
+  line-height: var(--terminal-base-row-height);
+}
+
+/* Ensure links in the terminal output use the primary text color */
+.command-output a {
+    color: var(--color-text-primary);
+}
+
+/* Animation for the loading dots */
+@keyframes pulse-dots {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.loading-dots {
+  animation: pulse-dots 1.5s infinite;
+}
+
+/* Styling for the 'my-nfts' command output */
+.nfts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.7rem;
+  padding: var(--spacing-m) 0;
+}
+
+.nft-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 180px;
+  border: 2px solid var(--color-text-primary);
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.nft-card:hover {
+  border-color: var(--color-highlight-background);
+}
+
+.nft-card svg {
+  display: block;
+}

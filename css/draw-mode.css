@@ -1,0 +1,64 @@
+:root {
+  /* Allows themes to override fullscreen dimensions if desired */
+  --draw-full-width: 100vw;
+  --draw-full-height: 100vh;
+}
+
+
+
+
+/* Hide UI that should disappear while drawing */
+body.matrix-draw-fullscreen #terminal-container,
+body.matrix-draw-fullscreen .simple-matrix-container[data-side="right"] {
+  display: none;
+}
+
+
+
+
+/* Performance hints */
+.simple-matrix-container[data-side="left"] {
+  /* Hint browser that width/height will animate */
+  will-change: width, height;
+  /* Isolate layout + paint for smoother transitions */
+  contain: layout paint;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+
+
+
+/* Prevent scrollbars when fullscreen */
+
+/* Always hide horizontal scrollbar */
+html, body {
+  overflow-x: hidden; /* never show horizontal scroll */
+}
+
+body.matrix-draw-fullscreen {
+  overflow: hidden;
+}
+
+/* Prevent scrollbars during collapsing animation */
+body.matrix-draw-collapsing {
+  overflow: hidden;
+}
+
+
+
+
+/* Left matrix container expands to fullscreen with width/height animation */
+body.matrix-draw-fullscreen .simple-matrix-container[data-side="left"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--draw-full-width);
+  height: var(--draw-full-height);
+  z-index: 1000;
+  /* width transition no longer used; kept for non-fullscreen modes */
+}
+
+
+
+

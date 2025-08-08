@@ -1,0 +1,25 @@
+# Copy this file to your publish directory (e.g., dist/_headers) before deploying to Cloudflare Pages.
+# It applies security headers, anti-indexing, and caching rules.
+
+/*
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://w.soundcloud.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://w.soundcloud.com https://api.soundcloud.com; frame-src https://w.soundcloud.com
+
+/index.html
+  Cache-Control: no-store
+
+/*.html
+  Cache-Control: no-store
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

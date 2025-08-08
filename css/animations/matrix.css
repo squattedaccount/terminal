@@ -1,0 +1,27 @@
+/* Matrix Animation Styles */
+
+.matrix-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.matrix-column {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.matrix-char {
+    position: absolute;
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--text-color);
+}

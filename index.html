@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <!-- Anti-SEO / anti-crawling -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <!-- Minimal share previews (kept intentionally sparse) -->
+    <meta property="og:title" content=">_ techno_punks">
+    <meta property="og:description" content="post‑AGI survivor club terminal / punk protocol">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://technopunks.xyz/">
+    <meta property="og:image" content="/assets/images/favicon.svg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content=">_ techno_punks">
+    <meta name="twitter:description" content="post‑AGI survivor club terminal / punk protocol">
+    <meta name="twitter:image" content="/assets/images/favicon.svg">
+    <title>>_ techno_punks</title>
+    <!-- Web3.js is now loaded dynamically by js/web3-handler.js -->
+    <!-- DOMPurify from CDN -->
+    <!-- DOMPurify: remove SRI for now due to hash mismatch; consider bundling via npm/Parcel -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.10/dist/purify.min.js" crossorigin="anonymous"></script>
+    <!-- Main CSS Bundle -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations/sidebar.css">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <script>
+        // Prevents FOUC (Flash of Unstyled Content)
+        (function() {
+            const theme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (theme === 'dark' || (!theme && prefersDark)) {
+                document.documentElement.classList.add('dark-theme');
+            } else {
+                document.documentElement.classList.remove('dark-theme');
+            }
+        })();
+    </script>
+
+</head>
+<body>
+    <noscript>
+      <div style="padding:12px;color:#fff;background:#b00020;">
+        JavaScript is required to run the techno_punks terminal. Please enable JS.
+      </div>
+    </noscript>
+
+    
+    <!-- Mobile View -->
+    <div class="mobile-view">
+        <div class="mobile-logo" id="mobile-logo">□_□</div>
+        <div class="mobile-about" id="mobile-about">
+            <!-- Content will be animated via JavaScript -->
+        </div>
+    </div>
+    
+    <!-- Main Application Container -->
+    <div id="app-container">
+        <!-- Main Terminal Interface -->
+        <div id="terminal-container">
+        <!-- Theme toggle button - positioned at the top right -->
+        <div id="theme-toggle">□_□</div>
+
+        <!-- Music Player -->
+        <div id="music-player-container" style="display:none;">
+            <iframe id="soundcloud-player" width="100%" height="120" style="display:none;" scrolling="no" frameborder="no" allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/leather-and-lace/funami-fm&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false">
+            </iframe>
+
+            <div id="music-controls">
+                <p id="song-info" style="display:none;"><a href="https://soundcloud.com/leather-and-lace/funami-fm" target="_blank">Funami FM / Soundcloud</a></p>
+                <div class="button-group">
+                    <button id="play-btn">></button> | <button id="stop-btn">x</button> | <button id="prev-btn"><<</button> | <button id="next-btn">>></button> | <button id="volume-up-btn">+</button> | <button id="volume-down-btn">-</button>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div id="terminal"></div>
+        <div id="version-display">v0.8.1</div>
+        
+        <!-- Side buttons removed, keeping only theme toggle -->
+    </div>
+    </div>
+
+    <!-- Main JavaScript module that imports all other modules -->
+    <script type="module" src="js/main.js"></script>
+
+    <!-- SoundCloud Widget API -->
+    <script src="https://w.soundcloud.com/player/api.js"></script>
+</body>
+</html>

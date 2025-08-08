@@ -1,0 +1,182 @@
+/*
+ * ====================================================================
+ * MAIN.CSS - GLOBAL STYLES
+ * ====================================================================
+ * This file contains global styles, resets, and base configurations.
+ * It should only use design tokens from variables.css.
+ */
+
+/* ----- Imports ----- */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/*
+ * ====================================================================
+ * APP LAYOUT STYLES
+ * ====================================================================
+ */
+
+#app-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Prevent scrollbars on the main container */
+    gap: var(--layout-main-gap); /* Use gap for spacing between elements */
+    background-color: var(--color-background); /* Ensure the gap area has the correct theme color */
+}
+
+#terminal-container {
+    flex-grow: 1; /* Allows the terminal to take up the remaining space */
+    position: relative; /* Needed for positioning elements within it */
+    height: 100%;
+    overflow-y: auto; /* Allow scrolling within the terminal if content overflows */
+    /* The margin-left has been removed and replaced by the 'gap' property on the parent container */
+}
+
+.terminal-side-box {
+    flex-shrink: 0; /* Prevent sidebars from shrinking */
+    position: relative !important; /* Override inline absolute positioning */
+    height: 100%;
+}
+
+
+
+/*
+ * ====================================================================
+ * BASE & RESET STYLES
+ * ====================================================================
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-base);
+  transition: var(--transition-theme);
+  -webkit-user-select: text;
+  user-select: text;
+  /* Prevent font scaling on orientation change */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/*
+ * ====================================================================
+ * GLOBAL ELEMENT STYLES
+ * ====================================================================
+ */
+
+/* ----- Global Selection ----- */
+::selection {
+  background-color: var(--color-highlight-background);
+  color: var(--color-highlight-text);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background-color: var(--color-highlight-background);
+  color: var(--color-highlight-text);
+}
+
+/* ----- Custom Scrollbar ----- */
+::-webkit-scrollbar {
+  width: var(--spacing-s);
+  height: var(--spacing-s);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-text-primary);
+  border-radius: var(--spacing-xs);
+  border: 2px solid var(--color-background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-highlight-background);
+}
+
+/*
+ * ====================================================================
+ * UTILITY CLASSES
+ * ====================================================================
+ */
+
+.critical-error-message {
+  color: red;
+  font-family: var(--font-family-mono);
+  padding: var(--spacing-m);
+}
+
+/* ----- NFT Gallery Styles ----- */
+.nfts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Space between NFTs */
+  padding: 1rem 0;
+}
+
+.nft-card {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 180px; /* Match collection SVG size */
+  height: 180px; /* Match collection SVG size */
+  border: 2px solid #555;
+  border-radius: 50%;
+  background-color: #222;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.nft-card:hover {
+  border-color: #00ff00; /* Green glow on hover */
+}
+
+.nft-card svg {
+  width: 300px; /* Original SVG width */
+  height: 300px; /* Original SVG height */
+  display: block;
+  flex-shrink: 0; /* Prevents shrinking within the flex container */
+  transform: scale(0.9); /* Zoom out slightly */
+}
+
+.nft-card svg text {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE10+/Edge */
+  user-select: none;         /* Standard */
+  pointer-events: none;      /* Make text non-interactive */
+  dominant-baseline: middle; /* Corrects vertical alignment issues */
+
+}
+
+/* Maintain SVG text color when selected */
+.nft-card svg text::selection {
+  fill: var(--color-svg-text);
+  color: var(--color-svg-text);
+  -webkit-text-fill-color: var(--color-svg-text);
+}
+
+.nft-card svg text::-moz-selection {
+  fill: var(--color-svg-text);
+  color: var(--color-svg-text);
+}
+
+
+

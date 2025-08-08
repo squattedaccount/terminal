@@ -1,0 +1,35 @@
+/* SVG Component Styles */
+
+/* Base SVG container styles */
+.svg-container,
+.project-svg-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.7rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+/* Base SVG wrapper styles */
+.svg-wrapper {
+  display: inline-block;
+  margin: 0.5rem;
+}
+
+
+
+/* SVG element styles */
+.svg-wrapper svg,
+.project-svg-wrapper svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  stroke-width: 2px; /* Definitive border width */
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE/Edge */
+}
+
+/* Additional project-specific styles can be added below */

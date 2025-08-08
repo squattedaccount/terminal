@@ -1,0 +1,25 @@
+{
+  "name": "techno_punks-terminal",
+  "version": "0.8.2",
+  "description": "techno_punks Terminal - An underground and experimental DeSoc journey",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel serve index.html",
+    "build": "parcel build index.html",
+    "postbuild": "mkdir -p dist && cp _headers.template dist/_headers"
+  },
+  "author": "techno_punks Team",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "dompurify": "^3.2.6",
+    "web3": "^4.9.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "sharp": "^0.34.3"
+  }
+}

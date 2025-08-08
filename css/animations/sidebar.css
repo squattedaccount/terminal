@@ -1,0 +1,157 @@
+/* Sidebar Wave Animation Styles */
+
+.terminal-side-box {
+    /* Essential positioning */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 1;
+    
+    /* Dimensions */
+    width: var(--left-animation-width);
+    
+    /* Visual properties */
+    background-color: var(--bg-color);
+    overflow: hidden;
+    
+    /* Performance optimizations */
+    will-change: transform;
+    transform: translateZ(0);
+    
+    /* Interaction properties */
+    pointer-events: auto;
+    cursor: default;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    
+    /* Transitions */
+    transition: width 0.3s ease-in-out;
+}
+
+/* Position for left animation box */
+.terminal-side-box.left {
+    left: 0;
+    right: auto;
+}
+
+/* Position for right animation box */
+.terminal-side-box.right {
+    right: 0;
+    left: auto;
+}
+
+.terminal-side-animation {
+    height: 100%;
+    width: 100%;
+    position: absolute; /* Ensure it fills the container */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block; /* Ensure pre displays as block */
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    overflow: hidden;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+    font-family: var(--font-mono);
+}
+
+.matrix-animation-grid {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    overflow: hidden; 
+    letter-spacing: var(--letter-spacing);
+}
+
+.matrix-row {
+    width: 100%; 
+    height: var(--line-height-base); /* Match terminal row height */
+    white-space: pre; 
+    overflow: hidden; 
+    box-sizing: border-box; /* Ensure padding/border don't affect total height */
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    letter-spacing: var(--letter-spacing);
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure text is visible with proper contrast */
+text, .terminal-side-animation span, .matrix-row span {
+    font-family: var(--font-mono);
+    color: var(--text-color);
+    font-size: var(--font-size-base);
+}
+
+/* Add RGB version of text color for opacity support */
+:root {
+    --text-color-rgb: 255, 255, 255; /* Default, will be overridden by theme */
+}
+
+/* Responsive breakpoints for animation boxes */
+@media (max-width: 1400px) {
+    .terminal-side-box {
+        width: 250px; /* Slightly smaller on medium-large screens */
+    }
+}
+
+@media (max-width: 1200px) {
+    .terminal-side-box {
+        width: 200px; /* Smaller on medium screens */
+    }
+}
+
+@media (max-width: 1000px) {
+    .terminal-side-box {
+        width: 150px; /* Even smaller on medium-small screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .terminal-side-box {
+        width: 100px; /* Very small on small screens */
+    }
+}
+
+@media (max-width: 800px) {
+    .terminal-side-box {
+        width: 80px; /* Minimal size before mobile view takes over */
+    }
+}
+
+.simple-matrix-grid {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    overflow: hidden;
+    cursor: default;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.simple-matrix-grid .matrix-row span {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-color);
+    display: inline-block;
+    text-align: center; /* Center char within its conceptual "box" */
+    width: var(--char-width);
+    letter-spacing: var(--letter-spacing);
+}

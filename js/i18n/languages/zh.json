@@ -1,0 +1,547 @@
+{
+  "welcome": "欢迎来到深渊。输入 [帮助] 进行互动。",
+  "commandNotFound": "找不到命令：",
+  "availableCommands": "可用命令：",
+  "videoStopped": "视频已停止。返回到正常的命令行界面视图。",
+  "videoThemeWarning": "警告：请在播放视频前切换到深色主题。使用主题切换器进行切换。",
+  "currentTheme": "当前主题：",
+  "languageChanged": "语言已成功更改。",
+  "invalidLanguage": "无效的语言代码。使用 'language' 命令查看可用选项。",
+  "help": {
+    "title": "可用命令",
+    "general": {
+      "header": "可用命令：",
+      "footer": "要获取特定命令的更多详细信息，请输入：help <命令名称>"
+    },
+    "categories": {
+      "core": "核心命令",
+      "info": "信息命令",
+      "tools": "工具命令",
+      "web3": "Web3命令",
+      "media": "媒体命令",
+      "other": "其他命令"
+    },
+    "help": {
+      "summary": "显示可用命令列表。",
+      "detailed": {
+        "description": "显示命令的帮助信息。",
+        "usage": "help [命令]",
+        "examples": [
+          "help",
+          "help mint"
+        ]
+      }
+    },
+    "about": {
+      "summary": "了解 techno_punks 运动",
+      "detailed": {
+        "description": "显示关于 techno_punks 项目的信息。",
+        "usage": "about"
+      }
+    },
+    "legal": {
+      "summary": "法律信息与免责声明",
+      "detailed": {
+        "description": "显示法律信息与免责声明。",
+        "usage": "legal"
+      }
+    },
+    "roadmap": {
+      "summary": "查看项目路线图",
+      "detailed": {
+        "description": "显示项目路线图。",
+        "usage": "roadmap"
+      }
+    },
+    "team": {
+      "summary": "项目背后的团队",
+      "detailed": {
+        "description": "显示关于项目团队的信息。",
+        "usage": "team"
+      }
+    },
+    "links": {
+      "summary": "有用链接列表",
+      "detailed": {
+        "description": "显示与项目相关的有用链接列表。",
+        "usage": "links"
+      }
+    },
+    "collection": {
+      "summary": "探索藏品",
+      "detailed": {
+        "description": "显示一组随机生成的人物配对。",
+        "usage": "collection"
+      }
+    },
+    "supply": {
+      "summary": "代币供应和分发信息",
+      "detailed": {
+        "description": "显示有关代币供应和分发的信息。",
+        "usage": "supply"
+      }
+    },
+    "connect": {
+      "summary": "连接你的 MetaMask 钱包",
+      "detailed": {
+        "description": "将你的 MetaMask 钱包连接到应用程序。",
+        "usage": "connect",
+        "examples": []
+      }
+    },
+    "clear": {
+      "summary": "清除终端屏幕",
+      "detailed": {
+        "description": "清除终端屏幕并显示欢迎消息。",
+        "usage": "clear",
+        "examples": [
+          "clear"
+        ]
+      }
+    },
+    "cls": {
+      "summary": "clear 的别名",
+      "detailed": {
+        "description": "clear 命令的别名。",
+        "usage": "cls",
+        "examples": [
+          "cls"
+        ]
+      }
+    },
+    "winamp": {
+      "summary": "启动音乐播放器",
+      "detailed": {
+        "description": "切换音乐播放器的可见性。",
+        "usage": "winamp",
+        "examples": [
+          "winamp"
+        ]
+      }
+    },
+    "lang": {
+      "summary": "显示或设置当前语言。",
+      "detailed": {
+        "description": "显示当前语言或为终端设置新语言。",
+        "usage": "lang [语言代码]",
+        "examples": [
+          "lang (显示当前语言)",
+          "lang zh (将语言设置为中文)"
+        ],
+        "footer": "\n可用语言:\n  en   英语\n  es   西班牙语\n  de   德语\n  zh   中文"
+      },
+      "error": {
+        "invalidCode": "错误：无效或不支持的语言代码。",
+        "suggestion": "输入 'help lang' 查看可用语言列表。"
+      }
+    },
+    "mint": {
+      "summary": "铸造新的 techno_punks NFT",
+      "detailed": {
+        "description": "将一个或多个 techno_punks NFT 铸造到您连接的钱包中。",
+        "usage": "mint techno_punks [数量]",
+        "examples": [
+          "mint techno_punks 1",
+          "mint techno_punks 20"
+        ]
+      },
+      "error": {
+        "invalidQuantity": "错误：您一次只能铸造 1 到 20 个 NFT。",
+        "walletNotConnected": "错误：钱包未连接。请使用 'connect' 命令连接您的钱包后再铸造。",
+        "missingArgs": "错误：缺少必需的参数。\n用法: mint techno_punks [数量] [--bg #十六进制颜色] [--text #十六进制颜色]\n更多详情，请使用: help mint"
+      }
+    },
+    "list": {
+      "summary": "列出你的 NFT",
+      "detailed": {
+        "description": "列出你拥有的 techno_punks NFT。",
+        "usage": "list",
+        "examples": []
+      }
+    },
+    "set": {
+      "summary": "为你的 NFT 设置自定义颜色",
+      "detailed": {
+        "description": "要设置自定义颜色，请使用：",
+        "usage": "set <token_id> [--bg <十六进制颜色>] [--text <十六进制颜色>]",
+        "examples": [
+          "set 123 --text #123456",
+          "set 456 --bg #abcdef",
+          "set 789 --bg #ff0000 --text #00ff00"
+        ]
+      },
+      "error": {
+        "missingArgs": "错误：缺少参数。请使用 'help set' 获取更多详情。",
+        "invalidArgs": "错误：您必须至少指定一个自定义选项，例如 --bg 或 --text。"
+      }
+    },
+    "status": {
+      "summary": "链上收藏状态",
+      "detailed": {
+        "description": "获取并显示 NFT 收藏的当前链上状态。",
+        "usage": "status",
+        "examples": [
+          "status"
+        ]
+      }
+    },
+    "disconnect": {
+      "summary": "断开当前连接的钱包",
+      "detailed": {
+        "description": "断开当前连接的钱包与应用程序的连接。",
+        "usage": "disconnect",
+        "examples": [
+          "disconnect"
+        ]
+      }
+    },
+    "verify": {
+      "summary": "验证 NFT 所有权以获得 Discord 角色",
+      "detailed": [
+        "",
+        "用法: verify [子命令]",
+        "",
+        "将您的钱包连接到您的 Discord 帐户以授予特殊角色。",
+        "",
+        "子命令:",
+        "  verify <discord-id>   启动验证过程。",
+        "  verify check            检查您当前的验证状态。",
+        "",
+        "要获取您的 Discord ID，请进入服务器并输入: !my-id",
+        ""
+      ]
+    },
+    "verify_example": ["verify 1234567891012"],
+    "specific": {
+      "noDescription": "无可用描述。",
+      "noUsage": "无用法信息。",
+      "usagePrefix": "用法:",
+      "examplesTitle": "示例:"
+    },
+    "get-colors": {
+      "summary": "获取特定 NFT 的颜色",
+      "detailed": {
+        "description": "获取特定 NFT 的当前背景和文本颜色。",
+        "usage": "get-colors <代币_id>",
+        "examples": [
+          "get-colors 123"
+        ]
+      }
+    },
+    "draw": {
+      "summary": "进入实验性绘画模式",
+      "detailed": {
+        "description": "进入实验性绘画模式。",
+        "usage": "draw",
+        "examples": []
+      }
+    }
+  },
+  "terminal": {
+    "welcome": "欢迎来到深渊。输入 [帮助] 进行互动。",
+    "version": "techno_punks 终端 v{{version}}",
+    "info": {
+      "noOwnedNFTs": "您不拥有此集合中的任何 NFT。",
+      "mintStart": "正在为 {{quantity}} 个 NFT 开始铸造过程...",
+      "approveTransactions": "您需要在您的钱包中批准每笔交易。",
+      "mintedToken": "已铸造代币 #{{tokenId}} ({{pair}})",
+      "customizationStart": "正在为 {{count}} 个 NFT 开始颜色定制...",
+      "customizingToken": "正在定制代币 #{{tokenId}} ({{i}} / {{count}})...",
+      "approveTransaction": "您需要在您的钱包中批准交易。",
+      "metaMaskRequired": "未检测到 MetaMask。请从 https://metamask.io/download/ 安装浏览器扩展程序以继续。",
+      "transactionTakingLong": "⚠️ 交易时间超出预期（2分钟以上）。这在 Hyperliquid 测试网上是正常的。请稍候...",
+      "contactingBlockchain": "正在连接到 Hyperliquid 网络...",
+      "walletConnected": "钱包已连接：{{address}}"
+    },
+    "success": {
+      "minted": "成功铸造了 {{count}} 个 NFT！",
+      "colorsUpdated": "成功：代币 #{{tokenId}} 的颜色已更新。",
+      "mintedTokensList": "Minted tokens:"
+    },
+    "error": {
+      "unknownCommand": "未知命令：{{commandName}}",
+      "noHelp": "没有关于 '{{commandName}}' 的帮助信息。",
+      "unknownCollection": "错误：未知的集合 '{{collectionName}}'。您是指 'technopunks' 吗？",
+      "invalidMintQuantity": "错误：您一次只能铸造 1 到 10 个 NFT。",
+      "invalidBgColor": "错误：无效的背景颜色 '{{bgColor}}'。请使用 6 位十六进制代码（例如 #RRGGBB）。",
+      "invalidTextColor": "错误：无效的文本颜色 '{{textColor}}'。请使用 6 位十六进制代码（例如 #RRGGBB）。",
+      "noWinamp": "音乐播放器不可用。",
+      "viewInit": "初始化终端视图时出错：{{message}}",
+      "setUsage": "错误：用法不正确。",
+      "walletNotFound": "未找到钱包 '{{walletName}}'。请检查名称并重试。",
+      "svgLoadFailed": "加载 SVG 时出错：{{message}}",
+      "failedToSetCustomTheme": "设置自定义主题失败：{{message}}",
+      "failedToLoadScript": "加载脚本失败：{{src}}",
+      "failedToLoadSVG": "加载 SVG 失败：{{status}}"
+    }
+  },
+  "web3": {
+    "success": {
+      "walletConnected": "钱包连接成功。账户：{{account}}",
+      "walletDisconnected": "钱包已断开连接。要切换钱包，请在重新连接前使用您的浏览器扩展。"
+    },
+    "info": {
+      "walletAlreadyConnected": "钱包已连接。账户：{{account}}",
+      "progress": "{{progressMessage}}",
+      "colorTxApproved": "代币 #{{tokenId}} 的颜色交易已批准。正在等待确认...",
+      "viewOnExplorer": "View on Hyperscan",
+      "noNFTsFound": "您还没有任何 techno_punks NFT。请使用 'mint' 命令获取您的！",
+      "fetchingCollectionInfo": "正在从 Hyperliquid 获取集合信息...",
+      "connecting": "正在尝试连接到 MetaMask...",
+      "sendingCustomization": "正在发送代币 ID #{{tokenId}} 的自定义请求...",
+      "txSent": "交易已发送！哈希：{{hash}}",
+      "customizationSuccess": "成功自定义代币 ID #{{tokenId}}。交易已确认：{{txHash}}"
+    },
+    "progress": {
+      "minting": "正在铸造 NFT {{i}} / {{quantity}}... 请在您的钱包中确认交易。",
+      "txApproved": "NFT {{i}} 的交易已批准。正在等待确认...",
+      "preparingTx": "正在准备交易... 请在您的钱包中确认。",
+      "preparingBatchTx": "正在为 {{quantity}} 个 NFT 准备批量交易... 请在您的钱包中确认。",
+      "txSubmitted": "交易已在 Hyperliquid 上提交：{{hash}}",
+      "batchTxSubmitted": "批量交易已在 Hyperliquid 上提交：{{hash}} ({{quantity}} 个 NFT)",
+      "txConfirmed": "交易已确认！正在处理已铸造的代币...",
+      "batchTxConfirmed": "批量交易已确认！正在处理 {{quantity}} 个已铸造的代币...",
+      "txTimeout": "已达到 Web3 超时，但交易 {{hash}} 可能仍在处理中...",
+      "batchTxTimeout": "已达到 Web3 超时，但批量交易 {{hash}} ({{quantity}} 个 NFT) 可能仍在处理中...",
+      "stillWaiting": "仍在等待确认... (已过 {{elapsed}} 秒) - {{hash}}"
+    },
+    "error": {
+      "generic": "错误：{{message}}",
+      "connectionDenied": "连接失败：用户拒绝了账户访问。",
+      "noWallet": "您的浏览器中未检测到钱包扩展。请安装 Metamask。",
+      "addNetwork": "无法添加 {{chainName}} 网络。",
+      "notConnected": "请先使用 'connect' 命令连接您的钱包。",
+      "fetchInfo": "获取信息失败：{{message}}",
+      "mintRejected": "铸造 NFT {{count}} 失败：交易被用户拒绝。",
+      "mintFailed": "铸造过程在 NFT {{count}} 处失败。请参阅控制台了解详情。",
+      "fetchColors": "无法获取代币 ID #{{tokenId}} 的颜色。它可能不存在。",
+      "customizationRejected": "定制失败：交易被用户拒绝。",
+      "customizationFailed": "定制失败。请参阅控制台了解详情。",
+      "fetchFont": "无法获取代币 ID #{{tokenId}} 的字体。它可能不存在。",
+      "metaMaskRequired": "未检测到 MetaMask。请从 https://metamask.io/download/ 安装浏览器扩展程序以继续。",
+      "notConnectedBeforeMint": "错误：钱包未连接。请在铸造前使用 'connect' 命令连接您的钱包。",
+      "notOwner": "错误：您不是代币 ID #{{tokenId}} 的所有者。您只能自定义您拥有的 NFT。",
+      "tokenNotFound": "错误：代币 ID #{{tokenId}} 不存在。",
+      "setMissingArgs": "缺少必需的参数。请使用 'help set' 获取用法信息。",
+      "setInvalidArgs": "提供了无效的参数。请使用 'help set' 获取用法信息。"
+    },
+    "status": {
+      "title": "集合信息",
+      "name": "名称",
+      "contractAddress": "合约地址",
+      "price": "价格",
+      "minted": "已铸造"
+    }
+  },
+  "commands": {
+    "command_descriptions": {
+      "help": "列出可用命令及其描述",
+      "clear": "清除终端屏幕",
+      "cls": "clear 的别名",
+      "about": "显示一般信息",
+      "roadmap": "显示社区路线图",
+      "team": "列出项目贡献者",
+      "legal": "服务条款",
+      "links": "外部资源",
+      "lang": "全球模式和全球代码",
+      "minting": "合约和铸造详情",
+      "collection": "显示项目规格"
+    },
+    "about": [
+      "",
+      "techno_punks 是一个由人工智能推动的 techno-punk 运动：一个多链品牌，旨在赋予 web3 原生灵魂力量。",
+      "",
+      "我们是：",
+      "诞生于 Hiperliquid，但将超越它。",
+      "一个基于 VPL 的后 AGI 幸存者俱乐部 /",
+      "一个由 vibe-hackers 组成的多元文化社区。",
+      ""
+    ],
+    "minting_guide": [
+      "要铸造 NFT，请使用以下命令：",
+      "- 'mint info'：获取有关集合的详细信息。",
+      "- 'mint collection'：在 OpenSea 上查看集合。",
+      "- 'mint'：启动铸造过程。"
+    ],
+    "distro": [
+      "",
+      "区块链：以太坊",
+      "供应量：5,124",
+      "代币：ERC-721 标准",
+      "铸造价格：0.03 ETH",
+      "合约地址：将在 Discord 服务器达到 150 名成员时公布。",
+      "",
+      "公平启动：无白名单，无风险投资，无内部圈子。",
+      "为避免 Web2 影响者，仅通过 Etherscan 进行铸造。",
+      "",
+      "对于未来的计划和营销，将通过代码将 150 个 NFT 铸造到以下地址：",
+      "TBA",
+      "",
+      "另外 150 个 NFT 将进入 techno_punks DAO 金库：",
+      "TBA",
+      "",
+      "NFA：",
+      "稀缺性数学：5,124 个代币 vs 46 亿互联网用户。",
+      "自主代理很快将比人类交易更多。",
+      "这是你进入未来数字经济的入门股权。",
+      ""
+    ],
+    "roadmap": [
+      "",
+      "techno_punks 不预测未来。他们编写未来：",
+      "",
+      "执行树：",
+      "├── NFTs",
+      "│   └── 初始集合发布",
+      "├── 社区",
+      "│   ├── Guild.xyz 集成",
+      "│   └── Discord DAO",
+      "├── 基础设施与生态系统",
+      "│   ├── 自定义市场（预计会有混乱）",
+      "│   ├── AI 领域：群体网络和自主代理",
+      "│   ├── 开源 Web3 终端开发",
+      "│   └── 战略伙伴关系",
+      "├── 内容",
+      "│   ├── 播客和空间（阴谋论和假新闻）",
+      "│   ├── 研讨会和黑客马拉松（以太坊重新合并的潜力）",
+      "│   ├── Raves 和媒体黑客（精神和病毒式战争）",
+      "├── 代币经济学",
+      "│   ├── 空投（ERC-20, ERC-721, ERC-1155）",
+      "│   └── 多链品牌扩展",
+      "",
+      "*路线图不是固定的，也不是保证*",
+      "社区的贡献、意图和决定可以从根本上改变方向。",
+      "你的评论、帖子、点赞、提交和投票将塑造 techno_punks 的未来。",
+      "链上数据将讲述真实的故事。",
+      ""
+    ],
+    "team": [
+      "",
+      "你可以通过在 discord 上的团队频道申请成为团队成员。",
+      "",
+      "当前团队：",
+      "",
+      "D_s — 首席设计",
+      "X_4 — 法律",
+      "?_2 — 顾问",
+      "",
+      "参与证明 > 投资证明。",
+      "价值 = 共识",
+      ""
+    ],
+    "collection": [
+      "",
+      "In an era of overdesigned avatars, full of manufactured cuteness to evoke parasocial bonds, techno_punks choose a different path: the characters.",
+      "",
+      "Characters that built the internet. Characters that transform thought into codes, intention into complex systems. Characters that connects human and machine language.",
+      "",
+      "//examples://",
+      "",
+      {
+        "type": "svg_block",
+        "html": "<div class=\"project-svg-container\">\n  <div class=\"project-svg-wrapper\">\n    {{SVG_PLACEHOLDER_1}}\n  </div>\n  <div class=\"project-svg-wrapper\">\n    {{SVG_PLACEHOLDER_2}}\n  </div>\n</div>"
+      },
+      "",
+      "(Press Ctrl+Enter or Cmd+Enter to generate new pairs)",
+      "",
+      "TECHNICAL SPECIFICATIONS",
+      "  Format: [CHAR]_[CHAR]",
+      "  Display: SVG code generated in token URI",
+      "  Status: 100% on-chain, no IPFS dependencies, no external servers",
+      "  Font: Arial",
+      "",
+      "Wait! Arial? Why? Because it's the anti-design. The default. The system font that refuses to dress up or pretend. It's punk because it doesn't give a fuck about your typography trends. Raw functionality over aesthetic.",
+      "",
+      "MUTATION PROTOCOL: ACTIVE",
+      "  # Owners can modify NFT colors via smart contract function calls. Your NFT, your rules.",
+      "  # DIY ethos coded in solidity.",
+      "",
+      "///WARNING: MAY CAUSE AUTHENTIC HUMAN CONNECTION///",
+      "",
+      "Don't let others mislead you:",
+      "",
+      "This is not art.",
+      "This is not smart.",
+      "This is not unique.",
+      "This is not minimal.",
+      "",
+      "It's just Punk. In its purest form.",
+      ""
+    ],
+    "links": [
+      "",
+      "x.com/squattedaccount",
+      "github.com/squattedaccount",
+      "discord.com/invite/DFRcYgJGag",
+      ""
+    ],
+    "legal": [
+      "",
+      "techno_punks 是根据 [[VPL]] 的条款分发的。",
+      "该项目主要由社区主导；方向和发展可能会根据集体意见而演变。",
+      "通过使用、互动、铸造或为 techno_punks 做出贡献，你完全自行承担风险。",
+      "所有与代币相关的互动均受以太坊网络代码库的管辖。任何互动者均自行承担风险。",
+      "没有功能、价值或结果的保证、担保或承诺。",
+      "任何个人或实体均不对因你的参与而产生的任何损失、损害或后果负责。",
+      "这是一个实验性的、创造性的数字项目。不是财务或法律建议。",
+      "",
+      "有关项目性质的疑虑，请直接与中本聪联系。祝你好运。",
+      ""
+    ],
+    "lang": [
+      "",
+      "要更改语言，请使用：",
+      "lang [语言代码]",
+      "",
+      "示例：lang de 将语言设置为德语",
+      "",
+      "可用语言：",
+      "en - 英语",
+      "es - 西班牙语",
+      "de - 德语",
+      "zh - 中文",
+      ""
+    ],
+    "supply": [
+      "",
+      "区块链：Hyperliquid",
+      "供应量：5,184",
+      "代币：ERC-721",
+      "铸造价格：1 Hype",
+      "合约地址：Discord 服务器达到 150 名成员时公布。",
+      "",
+      "公平启动：无白名单，无风投。",
+      "",
+      "未来计划、社区建设和市场推广将有 150 个 NFT 通过代码铸造到以下地址：",
+      "TBA",
+      "",
+      "另外 150 个 NFT 将进入 techno_punks DAO 金库：",
+      "TBA",
+      "",
+      "稀缺性数学：",
+      "5,184 个代币 vs 55 亿互联网用户 + 20 亿机器人。",
+      "到 2027 年，机器人数量可能首次超过人类互联网用户。",
+      "请记住：此刻是你进入未来数字经济的入场股权。",
+      "(NFA)",
+      ""
+    ]
+  },
+  "verify": {
+    "connecting": "正在连接钱包...",
+    "connectionFailed": "钱包连接失败。请重试。",
+    "signMessage": "请在您的钱包中签署消息以继续。",
+    "sending": "正在向服务器发送验证...",
+    "success": "验证成功：{{message}}",
+    "failed": "验证失败：{{error}}",
+    "checkingStatus": "正在检查验证状态...",
+    "statusVerified": "此钱包已验证。",
+    "discordUser": "Discord 用户：{{username}} (ID: {{discordId}})",
+    "walletAddress": "钱包地址：{{walletAddress}}",
+    "verifiedOn": "验证于：{{timestamp}}",
+    "statusNotVerified": "此钱包未验证。",
+    "startProcess": "要开始验证过程，请使用 'verify <您的Discord_ID>'。",
+    "statusCheckFailed": "检查验证状态失败。",
+    "invalidSubcommand": "无效的子命令。使用 'verify check' 检查状态，或使用 'verify <您的Discord_ID>' 开始。"
+  },
+  "currentLanguage": "Current language is:"
+}

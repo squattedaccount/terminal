@@ -1,0 +1,94 @@
+/* Mobile-specific styles */
+
+.welcome-command {
+  text-decoration: underline;
+  color: var(--color-accent, #00ff00);
+  cursor: pointer;
+}
+.mobile-view {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Enable vertical scrolling */
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+}
+
+.mobile-logo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 1001;
+}
+
+.mobile-logo:hover {
+    /* Do not change transform on hover; keep centered */
+    transform: translateX(-50%);
+}
+
+.mobile-logo:active,
+.mobile-logo:focus {
+    transform: translateX(-50%);
+}
+
+.mobile-about {
+    margin-top: 60px;
+    width: 100%;
+    line-height: var(--line-height-base);
+    font-family: var(--font-family-mono);
+}
+
+.mobile-line {
+    margin: 0;
+    padding: 0;
+    line-height: var(--line-height-base);
+    font-family: var(--font-family-mono);
+    color: var(--color-text-primary);
+}
+
+.blinking-cursor {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { color: transparent; }
+    50% { color: var(--color-text-primary); }
+}
+
+.spinner-line {
+    color: var(--color-text-primary);
+    font-weight: normal;
+}
+
+/* Simple mobile view implementation */
+@media (max-width: 768px) {
+    /* Hide terminal and sidebars on mobile */
+    #terminal-container,
+    .terminal-side-box {
+        display: none;
+    }
+    
+    /* Show mobile view on mobile devices */
+    .mobile-view {
+        display: flex;
+        font-size: 16px;
+        line-height: 20px;
+    }
+}

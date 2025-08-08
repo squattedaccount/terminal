@@ -1,0 +1,42 @@
+/**
+ * Theme toggle button styling
+ */
+
+#theme-toggle {
+  position: fixed;
+  top: 55px; /* Moved up 20px from 65px */
+  right: 95px; /* Moved left 80px from 15px */
+  font-size: 28px; /* Original 24px * 1.15 */
+  font-family: monospace;
+  cursor: pointer;
+  z-index: 1000;
+  color: var(--text-color);
+  background-color: transparent;
+  padding: 6px; /* Original 5px * 1.15 */
+  opacity: 1;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  text-shadow: 0 0 5px var(--glow-color);
+  line-height: 1;
+  height: 45px; /* Original 39px * 1.15 */
+  width: 90px; /* Original 78px * 1.15 */
+}
+
+#theme-toggle:hover {
+  text-shadow: 0 0 8px var(--glow-color);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  #theme-toggle {
+    top: 10px;
+    right: 10px;
+    font-size: 23px; /* Original 20px * 1.15 */
+    /* padding: 6px; will be inherited from the main #theme-toggle rule */
+    height: 28px; /* Original 24px * 1.15 */
+    width: 58px; /* Original 50px * 1.15 */
+  }
+}

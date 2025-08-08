@@ -1,0 +1,21 @@
+/* Overrides and additions for draw mode */
+
+/* Always hide horizontal scrollbar to avoid flash after draw mode */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Parameterized clip-path animation that starts from configurable right inset */
+@keyframes draw-reveal-columns-dynamic {
+  from {
+    clip-path: inset(0 var(--draw-clip-start, 100%) 0 0);
+  }
+  to {
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+.reveal-columns {
+  /* Use dynamic keyframes if --draw-clip-start is provided */
+  animation-name: draw-reveal-columns, draw-reveal-columns-dynamic;
+}
