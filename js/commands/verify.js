@@ -9,12 +9,11 @@ import { Spinner } from '../core/spinner.js';
 const API_ENDPOINT = 'https://verif-bot.sm-p.workers.dev/api';
 
 async function startVerification(terminal, discordId) {
-    terminal.showSpinner(i18n.t('verify.connecting'));
+    terminal.display_output(createTerminalMessage('verify.connecting'));
     await web3Handler.connectWallet();
     const walletAddress = web3Handler.getConnectedAccount();
     if (!walletAddress) {
-        terminal.hideSpinner();
-        terminal.display_output(createTerminalError(i18n.t('verify.connectionFailed')));
+        terminal.display_output(createTerminalError('verify.connectionFailed'));
         return;
     }
     const timestamp = Date.now();
@@ -27,10 +26,10 @@ async function startVerification(terminal, discordId) {
             throw new Error(i18n.t('web3.error.notConnected'));
         }
         
-        terminal.showSpinner(i18n.t('verify.signMessage'));
+        terminal.display_output(createTerminalMessage('verify.signMessage'));
         const signature = await web3.eth.personal.sign(message, walletAddress, '');
         
-        terminal.showSpinner(i18n.t('verify.sending'));
+        terminal.display_output(createTerminalMessage('verify.sending'));
 
 
         const response = await fetch(`${API_ENDPOINT}/verify`, {
@@ -46,52 +45,47 @@ async function startVerification(terminal, discordId) {
             }),
         });
 
-        terminal.hideSpinner();
         const result = await response.json();
 
         if (response.ok) {
-            terminal.display_output(createTerminalMessage(i18n.t('verify.success', { message: result.message })));
+            terminal.display_output(createTerminalMessage('verify.success', { message: result.message }));
         } else {
-            terminal.display_output(createTerminalError(i18n.t('verify.failed', { error: result.error || 'Verification failed.' })));
+            terminal.display_output(createTerminalError('verify.failed', { error: result.error || 'Verification failed.' }));
         }
     } catch (error) {
-        terminal.hideSpinner();
-        terminal.display_output(createTerminalError(error.message));
+        terminal.display_output(createTerminalError('web3.error.generic', { message: error.message }));
     }
 }
 
 async function checkStatus(terminal) {
-    terminal.showSpinner(i18n.t('verify.connecting'));
+    terminal.display_output(createTerminalMessage('verify.connecting'));
     await web3Handler.connectWallet();
     const walletAddress = web3Handler.getConnectedAccount();
     if (!walletAddress) {
-        terminal.hideSpinner();
-        terminal.display_output(createTerminalError(i18n.t('verify.connectionFailed')));
+        terminal.display_output(createTerminalError('verify.connectionFailed'));
         return;
     }
 
     try {
-        terminal.showSpinner(i18n.t('verify.checkingStatus'));
+        terminal.display_output(createTerminalMessage('verify.checkingStatus'));
         const response = await fetch(`${API_ENDPOINT}/status/${walletAddress}`);
         const result = await response.json();
-        terminal.hideSpinner();
 
         if (response.ok) {
             if (result.isVerified) {
-                terminal.display_output(createTerminalMessage(i18n.t('verify.statusVerified')));
-                terminal.display_output(createTerminalMessage(i18n.t('verify.discordUser', { username: result.username, discordId: result.discordId })));
-                terminal.display_output(createTerminalMessage(i18n.t('verify.walletAddress', { walletAddress: result.walletAddress })));
-                terminal.display_output(createTerminalMessage(i18n.t('verify.verifiedOn', { timestamp: new Date(result.timestamp).toLocaleString() })));
+                terminal.display_output(createTerminalMessage('verify.statusVerified'));
+                terminal.display_output(createTerminalMessage('verify.discordUser', { username: result.username, discordId: result.discordId }));
+                terminal.display_output(createTerminalMessage('verify.walletAddress', { walletAddress: result.walletAddress }));
+                terminal.display_output(createTerminalMessage('verify.verifiedOn', { timestamp: new Date(result.timestamp).toLocaleString() }));
             } else {
-                terminal.display_output(createTerminalMessage(i18n.t('verify.statusNotVerified')));
-                terminal.display_output(createTerminalMessage(i18n.t('verify.startProcess')));
+                terminal.display_output(createTerminalMessage('verify.statusNotVerified'));
+                terminal.display_output(createTerminalMessage('verify.startProcess'));
             }
         } else {
-            terminal.display_output(createTerminalError(i18n.t('verify.failed', { error: result.error || i18n.t('verify.statusCheckFailed') })));
+            terminal.display_output(createTerminalError('verify.failed', { error: result.error || i18n.t('verify.statusCheckFailed') }));
         }
     } catch (error) {
-        terminal.hideSpinner();
-        terminal.display_output(createTerminalError(error.message));
+        terminal.display_output(createTerminalError('web3.error.generic', { message: error.message }));
     }
 }
 
@@ -111,8 +105,9 @@ const command = {
         // to the new `onMessage` mechanism.
         const terminal = {
             display_output: onMessage,
-            showSpinner: (msg) => onMessage({ type: 'progress', payload: msg }),
-            hideSpinner: () => onMessage({ type: 'progress', payload: null }),
+            // No spinner for this command; we emit standard messages for consistency with other commands.
+            showSpinner: () => {},
+            hideSpinner: () => {},
             get_input: async () => {
                 // This is a placeholder. The new API doesn't support interactive input in the same way.
                 return '';
@@ -133,7 +128,7 @@ const command = {
             await startVerification(terminal, subcommand);
             return;
         } else {
-            terminal.display_output(createTerminalError(i18n.t('verify.invalidSubcommand')));
+            terminal.display_output(createTerminalError('verify.invalidSubcommand'));
             showHelp(terminal);
             return;
         }
