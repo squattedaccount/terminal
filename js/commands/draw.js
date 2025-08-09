@@ -18,4 +18,4 @@ const drawCommand = {
   },
 };
 
-export default [drawCommand];
+export default [];
