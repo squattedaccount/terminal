@@ -17,8 +17,7 @@ We build in public. We hack with intent. We keep each other safe.
 ## Don’t
 - Harass, threaten, stalk, or discriminate.
 - Post hate speech, sexualized content, or violent imagery targeted at anyone.
-- Spam, shill, farm, or run sockpuppets.
-- Phish, dox, or attempt unauthorized access.
+- Spam, phish, dox, or attempt unauthorized access.
 
 ## Zero‑Tolerance List
 - Hate or slurs targeting identity (race, ethnicity, nationality, caste, gender, gender identity, sexual orientation, religion, disability, serious disease, or age).
@@ -31,11 +30,11 @@ We build in public. We hack with intent. We keep each other safe.
 
 ## Reporting
 - Open a GitHub issue with the "coc" label if safe to do so.
-- Or DM moderators on Discord (use the #mods channel) if you need privacy.
+- Or DM moderators on Discord if you need privacy.
 - For urgent safety concerns: stop, document, and ping mods immediately.
 
 ## Consequences
-- Soft nudge → warning → mute → kick/ban → report to host/platform, depending on severity.
+- Soft nudge → warning → kick/ban → report, depending on severity.
 - Maintainers may remove content, restrict access, or escalate without prior notice to protect the community.
 
 ## Disputes

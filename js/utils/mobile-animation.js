@@ -36,8 +36,9 @@ class MobileAnimation {
       '# format: onchain SVGs',
       '# DIY protocol: ACTIVE',
       '',
-      '$ MINT: TBA',
-      '$ No whitelists. No VCs. Pure rebellion.',
+      '$ MINT: Live',
+      '$ No whitelists. No VCs',
+      '$ Pure rebellion.',
       '',
       '[SYSTEM_NOTICE]:',
       'Terminal access: desktop only.',
@@ -80,6 +81,21 @@ class MobileAnimation {
       cursor.className = 'blinking-cursor';
       cursor.textContent = '_';
       lineElement.appendChild(cursor);
+    } else if (content.startsWith('follow the vibe:')) {
+      // Create a link to the X (Twitter) account
+      const [label, handle] = content.split(':').map(s => s.trim());
+      const prefix = document.createTextNode(label + ': ');
+      const link = document.createElement('a');
+      link.href = 'https://x.com/squattedaccount';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      // Make it look like plain text
+      link.style.color = 'inherit';
+      link.style.textDecoration = 'none';
+      // Preserve original handle text (e.g., @squattedaccount)
+      link.textContent = handle || '@squattedaccount';
+      lineElement.appendChild(prefix);
+      lineElement.appendChild(link);
     } else {
       lineElement.textContent = content;
     }
