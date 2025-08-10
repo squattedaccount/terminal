@@ -14,7 +14,7 @@
   /* ----- Colors ----- */
   --color-background: #1A1B3E;
   --color-text-primary: #FFB7B2;
-  --color-svg-background: #393a96; /* A punk-ish, vivid blue-violet */
+  --color-svg-background: var(--color-background); /* Match site background */
   --color-svg-text: #FFB7B2; /* Coral */
   --color-svg-border: #FFB7B2; /* Coral */
   --color-highlight-background: #E9D5FF;
@@ -59,7 +59,7 @@ html.dark-theme {
    */
   --color-background: #000000;
   --color-text-primary: #80e3c3;
-  --color-svg-background: #000000; /* Black */
+  --color-svg-background: var(--color-background); /* Match site background */
   --color-svg-text: var(--color-text-primary);
   --color-svg-border: var(--color-text-primary);
   --color-highlight-background: #B388FF;

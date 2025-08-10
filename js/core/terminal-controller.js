@@ -19,7 +19,10 @@ class TerminalController {
     this.authenticator = new Authenticator(this);
     this.terminal = null;
     this.initialized = false;
-    this.isAuthenticated = false;
+    // Start unlocked by default. To restore password protection, set this back to false
+    // and re-enable the password prompt/masking in `terminal.js` (see comments there).
+    // Original: this.isAuthenticated = false;
+    this.isAuthenticated = true;
     this.isProcessingCommand = false;
   }
 

@@ -50,9 +50,11 @@ class Terminal {
       
       // Initialize terminal components
       this.core.initialize();
-      // Show password prompt initially
-      this.core.config.greetings = 'Please enter the password:';
-      this.core.setPrompt(PROMPTS.PASSWORD);
+      // Start unlocked with normal prompt
+      this.core.setPrompt(PROMPTS.ANONYMOUS);
+      // To re-enable password protection, restore the original lines below:
+      // this.core.config.greetings = 'Please enter the password:';
+      // this.core.setPrompt(PROMPTS.PASSWORD);
       this.view.initialize(); 
   
       
@@ -67,15 +69,18 @@ class Terminal {
       
       if (this.view.inputElement) {
         this.inputHandler.initialize(this.view.inputElement);
-        this.inputHandler.setPasswordMode(true); // Enable password mode
         finishInit();
       } else {
         eventBus.once('terminal:input:element:ready', (inputEl) => {
           this.inputHandler.initialize(inputEl);
-          this.inputHandler.setPasswordMode(true); // Enable password mode
           finishInit();
         });
       }
+
+      // Note: originally, password mode was enabled to mask input until auth:
+      // this.inputHandler.setPasswordMode(true);
+      // If you uncomment the password prompt above, also enable password mode here
+      // right after inputHandler.initialize(...).
       return this;
     } catch (error) {
       logger.error('Error initializing terminal:', error);

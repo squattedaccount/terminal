@@ -181,7 +181,7 @@
       }
     },
     "set": {
-      "summary": "set a custom color for your NFT",
+      "summary": "customize NFT or site theme colors",
       "detailed": {
         "description": "To set custom color, use:",
         "usage": "set <token_id> [--bg <hex_color>] [--text <hex_color>]",

@@ -271,10 +271,8 @@ class TerminalView {
 
       // Listen for language changes to refresh the greeting
       eventBus.on('language:changed', () => {
-        const rawGreeting = i18n.t('welcome');
-        const greeting = rawGreeting.replace(/\[.*?]/, '[help]');
-        // Animate transition to new language with rolling effect
-        this.fancyUpdateGreeting(greeting);
+        // Keep the same fixed greeting on language changes (no animation)
+        this.showGreeting(terminalCore.getGreeting());
       });
       
       return this;

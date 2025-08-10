@@ -5,7 +5,7 @@ import ThemeManager from '../themes/manager.js';
 
 const command = {
   name: 'set',
-  category: 'system',
+  category: 'other',
   async handler(args, onMessage) {
     if (args.length < 1) {
       return createTerminalError('web3.error.setMissingArgs');

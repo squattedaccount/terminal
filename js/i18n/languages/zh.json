@@ -160,7 +160,7 @@
       }
     },
     "set": {
-      "summary": "为你的 NFT 设置自定义颜色",
+      "summary": "自定义 NFT 或站点主题颜色",
       "detailed": {
         "description": "要设置自定义颜色，请使用：",
         "usage": "set <token_id> [--bg <十六进制颜色>] [--text <十六进制颜色>]",

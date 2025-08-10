@@ -157,7 +157,7 @@
       }
     },
     "set": {
-      "summary": "lege eine benutzerdefinierte Farbe für deinen NFT fest",
+      "summary": "passe NFT- oder Website-Theme-Farben an",
       "detailed": {
         "description": "Um eine benutzerdefinierte Farbe festzulegen, verwende:",
         "usage": "set <token_id> [--bg <hex_farbe>] [--text <hex_farbe>]",

@@ -182,7 +182,7 @@
       }
     },
     "set": {
-      "summary": "aseta mukautettu väri NFT:llesi",
+      "summary": "mukauta NFT:n tai sivuston teeman värejä",
       "detailed": {
         "description": "Aseta mukautettu väri käyttämällä:",
         "usage": "set <token_id> [--bg <hex_väri>] [--text <hex_väri>]",

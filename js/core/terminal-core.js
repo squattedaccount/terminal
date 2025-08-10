@@ -18,7 +18,8 @@ class TerminalCore {
     this.config = {
             name: 'techno_punks_terminal',
       historySize: 100,
-      greetings: i18n.t('terminal.welcome'),
+      // Fixed greeting per request (no animation, exact text)
+      greetings: 'Welcome to the abyss. Type [help] to interact.',
       prompt: PROMPTS.DEFAULT
     };
     

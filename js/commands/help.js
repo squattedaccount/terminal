@@ -82,7 +82,7 @@ export default {
         let categoryDisplayName = i18n.t(categoryKey);
         // Remove the word "commands" (case-insensitive) from the end of the category label
         categoryDisplayName = categoryDisplayName.replace(/\s*commands?\s*$/i, '').trim();
-        output.push({ type: 'html', content: `<strong>${categoryDisplayName}</strong>` });
+        output.push({ type: 'html', content: `### <strong>${categoryDisplayName}</strong>` });
 
         commandList.forEach(commandName => {
           const command = CommandRegistry.getCommand(commandName);
