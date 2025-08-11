@@ -25,6 +25,13 @@ class TerminalView {
     // State
     this.initialized = false;
     this.isAttemptingSelection = false; // Flag to track if user is selecting text with mouse
+    // Auto-scroll state: only auto-scroll when user is near bottom
+    this.autoScroll = true;
+    this.AUTO_SCROLL_STICKY_PX = 48; // within 48px from bottom counts as "at bottom"
+    // If user scrolls up, we disable auto-scroll until they scroll to bottom again
+    this.userDisabledAutoScroll = false;
+    // Debounce: track pending RAF for scrollToBottom
+    this._scrollRafId = null;
 
     // Animation delays
     this.CHARACTER_ANIMATION_DELAY_MS = 0;    // Set to 0 for instant line reveal
@@ -46,6 +53,24 @@ class TerminalView {
       greeting:  item => this.showGreeting(item.content),
       prompt:    item => this.animatePrompt(item.content),
     };
+
+    // Track user scroll position to toggle auto-scroll
+    if (this.terminalElement) {
+      const updateAutoScroll = () => {
+        const el = this.terminalElement;
+        const distanceFromBottom = el.scrollHeight - el.scrollTop - el.clientHeight;
+        this.autoScroll = distanceFromBottom <= this.AUTO_SCROLL_STICKY_PX;
+      };
+      // On any scroll, recompute auto-scroll eligibility
+      this.terminalElement.addEventListener('scroll', updateAutoScroll, { passive: true });
+
+      // When user interacts via wheel/touch within terminal, update immediately
+      this.terminalElement.addEventListener('wheel', updateAutoScroll, { passive: true });
+      this.terminalElement.addEventListener('touchmove', updateAutoScroll, { passive: true });
+
+      // If input regains focus, we can optionally nudge autoScroll back on if near bottom
+      this.terminalElement.addEventListener('focusin', updateAutoScroll);
+    }
   }
 
   // --- Helper methods for output ---
@@ -258,6 +283,40 @@ class TerminalView {
       
       // Set up event listeners
       this.setupEventListeners();
+
+      // Attach auto-scroll state listeners AFTER terminal exists
+      const updateAutoScroll = (fromUser = false) => {
+        if (!this.terminalElement) return;
+        const el = this.terminalElement;
+        const distanceFromBottom = el.scrollHeight - el.scrollTop - el.clientHeight;
+        const atBottom = distanceFromBottom <= this.AUTO_SCROLL_STICKY_PX;
+
+        if (fromUser) {
+          // If the user scrolled and is not at bottom, disable auto-scroll until they return
+          if (!atBottom) {
+            this.userDisabledAutoScroll = true;
+            this.autoScroll = false;
+          } else if (this.userDisabledAutoScroll && atBottom) {
+            // User brought it back to bottom; re-enable auto-scroll
+            this.userDisabledAutoScroll = false;
+            this.autoScroll = true;
+          }
+        } else {
+          // Programmatic updates should not re-enable once user disabled
+          if (!this.userDisabledAutoScroll) {
+            this.autoScroll = atBottom;
+          }
+        }
+      };
+
+      // Initialize state based on current position
+      updateAutoScroll(false);
+
+      // User interaction events toggle the override
+      const userScrollHandler = () => updateAutoScroll(true);
+      this.terminalElement.addEventListener('scroll', userScrollHandler, { passive: true });
+      this.terminalElement.addEventListener('wheel', userScrollHandler, { passive: true });
+      this.terminalElement.addEventListener('touchmove', userScrollHandler, { passive: true });
       
       // Mark as initialized
       this.initialized = true;
@@ -935,16 +994,25 @@ class TerminalView {
    * Scroll terminal to bottom
    */
   scrollToBottom() {
-    if (this.terminalElement) {
-      // Use requestAnimationFrame for smoother scrolling
-      requestAnimationFrame(() => {
-        this.terminalElement.scrollTo({
-          top: this.terminalElement.scrollHeight,
-          behavior: 'auto' // Changed from 'smooth' for an instant, authentic terminal scroll
+    if (!this.terminalElement) return;
+    if (!this.autoScroll || this.userDisabledAutoScroll) return;
+    if (this._scrollRafId !== null) return; // already scheduled this frame
+
+    this._scrollRafId = requestAnimationFrame(() => {
+      this._scrollRafId = null; // clear for next frame
+      // Re-check just before scrolling in case user moved meanwhile
+      if (!this.terminalElement || !this.autoScroll || this.userDisabledAutoScroll) return;
+      const el = this.terminalElement;
+      const distanceFromBottom = el.scrollHeight - el.scrollTop - el.clientHeight;
+      if (distanceFromBottom <= this.AUTO_SCROLL_STICKY_PX && !this.userDisabledAutoScroll) {
+        el.scrollTo({
+          top: el.scrollHeight,
+          behavior: 'auto' // instant to avoid jumpiness
         });
-      });
-    }
+      }
+    });
   }
+
 
   /**
    * Display error message

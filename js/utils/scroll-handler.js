@@ -25,16 +25,24 @@ const ScrollHandler = {
     const isEventInTerminal = (event) => terminal.contains(event.target) || terminal === event.target;
     
     // Capture wheel events on the entire document
+    // Use native scrolling inside the terminal; only forward when outside
     document.addEventListener('wheel', function(event) {
-      // Don't handle if terminal doesn't exist
       if (!terminal) return;
-      
-      // Only handle events within the terminal
-      if (isEventInTerminal(event)) {
-        terminal.scrollTop += event.deltaY;
-        event.preventDefault();
+      const inTerminal = isEventInTerminal(event);
+
+      if (inTerminal) {
+        // Let the browser handle wheel inside the terminal for smoother behavior
+        return;
+      } else {
+        // If the event is outside, forward scroll to the terminal to keep UX centered there
+        const before = terminal.scrollTop;
+        terminal.scrollTop = Math.max(0, Math.min(terminal.scrollTop + event.deltaY, terminal.scrollHeight));
+        // Prevent default page scroll only if we actually forwarded movement
+        if (terminal.scrollTop !== before) {
+          event.preventDefault();
+        }
       }
-      // Allow default scrolling behavior outside the terminal
+      // Allow default scrolling behavior otherwise
     }, { passive: false });
     
     logger.debug('[ScrollHandler] Scroll handling initialized with selection support');
