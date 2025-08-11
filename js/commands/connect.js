@@ -1,4 +1,7 @@
 import { web3Handler } from '../web3-handler.js';
+import { showWalletPicker } from '../wallet/wallet-ui.js';
+import { connectWithWalletConnect } from '../wallet/walletconnect.js';
+import { WALLETCONNECT_PROJECT_ID } from '../web3-config.js';
 import i18n from '../i18n/i18n.js';
 import logger from '../core/logger.js';
 import { createTerminalMessage, createRawTerminalError } from '../utils/messaging.js';
@@ -18,14 +21,55 @@ export default {
         return createTerminalMessage('web3.info.walletAlreadyConnected', { account: connectedAccount });
       }
 
+      // Try injected wallets first via EIP-6963 picker
+      web3Handler.requestWalletAnnouncements();
+      await new Promise(r => setTimeout(r, 250));
+      const wallets = web3Handler.getDiscoveredWallets();
+
+      if (wallets && wallets.length) {
+        // Open lightweight picker modal
+        const providerChoice = await new Promise((resolve) => {
+          showWalletPicker({
+            wallets,
+            onSelect: (w) => resolve(w),
+            onCancel: () => resolve(null),
+          });
+        });
+
+        if (!providerChoice) {
+          return createTerminalMessage('web3.info.connectionCancelled');
+        }
+
+        if (providerChoice.type === 'walletconnect') {
+          spinner.start();
+          try {
+            const wcProvider = await connectWithWalletConnect(WALLETCONNECT_PROJECT_ID);
+            const newAccount = await web3Handler.connectWithProvider(wcProvider);
+            spinner.stop();
+            const message = i18n.t('web3.success.walletConnected', { account: newAccount });
+            return [{ type: 'text', content: message }];
+          } catch (e) {
+            spinner.stop();
+            return createRawTerminalError(i18n.t('web3.error.connectionFailed', { message: e.message }));
+          }
+        }
+
+        const selectedProvider = providerChoice.provider;
+        if (!selectedProvider) {
+          return createRawTerminalError(i18n.t('web3.error.connectionFailed', { message: 'No provider' }));
+        }
+
+        spinner.start();
+        const newAccount = await web3Handler.connectWithProvider(selectedProvider);
+        spinner.stop();
+        const message = i18n.t('web3.success.walletConnected', { account: newAccount });
+        return [{ type: 'text', content: message }];
+      }
+
+      // Fallback to legacy connect (MetaMask-first) if no wallets discovered
       spinner.start();
-
-      // Delegate connection logic entirely to the web3 handler.
-      // It will find the best provider or throw a translated error if none is found.
       const newAccount = await web3Handler.connectWallet();
-      
       spinner.stop();
-
       const message = i18n.t('web3.success.walletConnected', { account: newAccount });
       return [{ type: 'text', content: message }];
 

@@ -18,4 +18,5 @@ const drawCommand = {
   },
 };
 
+// Disable the draw command by exporting an empty registry
 export default [];

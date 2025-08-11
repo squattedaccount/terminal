@@ -43,6 +43,64 @@ function ensureWeb3Loaded() {
 }
 
 /**
+ * Wires standard EIP-1193 provider events to keep local state in sync.
+ */
+function wireProviderEvents(provider) {
+  if (!provider || !provider.on) return;
+
+  provider.on('accountsChanged', (accounts) => {
+    connectedAccount = Array.isArray(accounts) && accounts.length ? accounts[0] : null;
+  });
+
+  provider.on('chainChanged', (_chainId) => {
+    // no-op; consumers may refresh UI if needed
+  });
+
+  provider.on('disconnect', () => {
+    connectedAccount = null;
+  });
+}
+
+/**
+ * Initializes web3 with an externally selected EIP-1193 provider.
+ * Requests accounts, sets up network, wires events, and prepares the contract instance.
+ * @param {any} provider - An EIP-1193 compatible provider (injected or WC/AppKit returned)
+ * @returns {Promise<string>} The connected account address
+ */
+async function connectWithProvider(provider) {
+  await ensureWeb3Loaded();
+  if (!provider) throw new Error(i18n.t('web3.error.notConnected'));
+
+  web3 = new Web3(provider);
+  try {
+    // Request accounts if available
+    let accounts = [];
+    if (provider.request) {
+      accounts = await provider.request({ method: 'eth_requestAccounts' });
+    } else if (web3.eth && web3.eth.getAccounts) {
+      accounts = await web3.eth.getAccounts();
+    }
+
+    connectedAccount = accounts && accounts.length ? accounts[0] : null;
+    if (!connectedAccount) {
+      throw new Error(i18n.t('web3.error.connectionFailed', { message: 'No account returned' }));
+    }
+
+    contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
+    await setupNetwork(provider);
+
+    wireProviderEvents(provider);
+    return connectedAccount;
+  } catch (error) {
+    logger.error('Provider connection error:', error);
+    if (error.code === 4001) {
+      throw new Error(i18n.t('web3.error.connectionDenied'));
+    }
+    throw new Error(i18n.t('web3.error.connectionFailed', { message: error.message }));
+  }
+}
+
+/**
  * Keeps providers unique by their info.uuid.
  */
 function addProviderUniquely(newProvider) {
@@ -554,6 +612,7 @@ export const web3Handler = {
   getDiscoveredWallets,
   requestWalletAnnouncements,
   connectWallet,
+  connectWithProvider,
   disconnectWallet,
   getConnectedAccount,
   getCollectionInfo,

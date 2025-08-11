@@ -9,7 +9,10 @@
 
 /* Hide UI that should disappear while drawing */
 body.matrix-draw-fullscreen #terminal-container,
-body.matrix-draw-fullscreen .simple-matrix-container[data-side="right"] {
+body.matrix-draw-fullscreen .simple-matrix-container[data-side="right"],
+/* Also hide during exit animation to avoid flicker */
+body.matrix-draw-collapsing #terminal-container,
+body.matrix-draw-collapsing .simple-matrix-container[data-side="right"] {
   display: none;
 }
 

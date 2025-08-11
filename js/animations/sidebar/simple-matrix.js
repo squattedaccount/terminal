@@ -535,6 +535,9 @@ sideBox.style.height = '100%'; // Explicitly set height
             }
 
             const grid = new SimpleMatrixGrid(sideBox, side);
+            // Track draw transition state and debounce handle for resize
+            let drawTransitioning = false;
+            let resizeDebounce = null;
 
             // Add listeners based on side
             if (side === 'left') {
@@ -549,6 +552,7 @@ sideBox.style.height = '100%'; // Explicitly set height
             // Listen for key input during draw mode (only for the left grid)
             eventBus.on('draw:keyInput', ({ char, shift }) => {
                 if (side !== 'left') return;
+                if (drawTransitioning) return; // skip during enter/exit to reduce jank
                 if (!char || char.length !== 1) return;
                 if (!CONFIG.MATRIX_CHARS.includes(char)) return;
                 // Ignore Shift+key global replace functionality (feature removed)
@@ -590,6 +594,16 @@ sideBox.style.height = '100%'; // Explicitly set height
 
             // Use ResizeObserver to reliably trigger grid redraws AFTER the container's size has changed.
             const resizeObserver = new ResizeObserver(() => {
+                // During transitions, debounce resize work to the tail to avoid thrashing
+                if (drawTransitioning) {
+                    if (resizeDebounce) clearTimeout(resizeDebounce);
+                    resizeDebounce = setTimeout(() => {
+                        grid.resize();
+                        grid.needsRender = true;
+                        resizeDebounce = null;
+                    }, 120);
+                    return;
+                }
                 grid.resize();
                 grid.needsRender = true;
             });
@@ -597,7 +611,11 @@ sideBox.style.height = '100%'; // Explicitly set height
             grid.resizeObserver = resizeObserver; // Store for cleanup
 
             // Listen for the draw mode toggle
-            eventBus.on('draw:state', ({ active }) => {
+            eventBus.on('draw:state', ({ active, transitioning }) => {
+                // Track transitioning to gate expensive work
+                if (typeof transitioning === 'boolean') {
+                    drawTransitioning = transitioning;
+                }
                 
                 if (active) {
                     // Disable random changes during draw mode for the left grid
@@ -643,8 +661,16 @@ sideBox.style.height = '100%'; // Explicitly set height
                         };
                         sideBox.addEventListener('transitionend', onTransitionEnd);
 
-                        // Restore width based on current window size
-                        handleContainerResize();
+                        // Restore width based on current window size (debounced if transitioning)
+                        if (drawTransitioning) {
+                            if (resizeDebounce) clearTimeout(resizeDebounce);
+                            resizeDebounce = setTimeout(() => {
+                                handleContainerResize();
+                                resizeDebounce = null;
+                            }, 100);
+                        } else {
+                            handleContainerResize();
+                        }
                         // Remove clip-path reveal class & vars
                         sideBox.classList.remove('reveal-columns');
                         sideBox.style.removeProperty('--draw-col-steps');

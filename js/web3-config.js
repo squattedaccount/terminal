@@ -18,3 +18,6 @@ export const PUBLIC_RPC_URL = NETWORK_CONFIG.RPC_URL;
 // Smart Contract Configuration
 export const CONTRACT_ADDRESS = contractAddress.address;
 export const CONTRACT_ABI = contractAbi;
+
+// Reown / WalletConnect configuration
+export const WALLETCONNECT_PROJECT_ID = '254bd0f5669621f8911360a2f46c2e8d';

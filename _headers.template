@@ -7,7 +7,7 @@
   X-Frame-Options: DENY
   Referrer-Policy: no-referrer
   Permissions-Policy: geolocation=(), microphone=(), camera=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://w.soundcloud.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://w.soundcloud.com https://api.soundcloud.com https://verif-bot.sm-p.workers.dev; frame-src https://w.soundcloud.com
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://w.soundcloud.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://*.walletconnect.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://w.soundcloud.com https://api.soundcloud.com https://verif-bot.sm-p.workers.dev wss://relay.walletconnect.com https://*.walletconnect.com https://cloud.reown.com; frame-src https://w.soundcloud.com https://*.walletconnect.com
 
 /index.html
   Cache-Control: no-store
