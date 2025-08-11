@@ -183,12 +183,16 @@
     "set": {
       "summary": "customize NFT or site theme colors",
       "detailed": {
-        "description": "To set custom color, use:",
-        "usage": "set <token_id> [--bg <hex_color>] [--text <hex_color>]",
+        "description": "set custom color for NFTs or site theme",
+        "usage": [
+          "set [token_id] [--bg <hex_color>] [--text <hex_color>]",
+          "set theme [--bg <hex_color>] [--text <hex_color>]"
+        ],
         "examples": [
           "set 123 --text #123456",
           "set 456 --bg #abcdef",
-          "set 789 --bg #ff0000 --text #00ff00"
+          "set 789 --bg #ff0000 --text #00ff00",
+          "set theme --bg #000000 --text #00ff00"
         ]
       },
       "error": {
@@ -229,13 +233,11 @@
   "commands": {
     "about": [
       "",
-      "techno_punks is a post‑AGI survivor club where technology and DIY punk spirit meets.",
+      "techno_punks is an onchain lab for DIY techno culture. Expect tools, drops, and a beautiful disorder.",
       "",
-      "We’re building open‑source, web4‑ready, multichain infrastructure for web3 native souls.",
+      "Our core built around dynamic SVG NFTs (ERC-721) and an open-source, Web3-compatible CLI terminal that lets holders customize their onchain identity.",
       "",
-      "Expect NFT drops, raves, and a little chaos.",
-      "",
-      "Join our open community: contribute in your own way.",
+      "Join our open community. Contribute your own way.",
       ""
     ],
     "supply": [
@@ -267,7 +269,7 @@
       "├── Infrastructure & Ecosystem",
       "│   ├── Custom marketplace (expect chaos)",
       "│   ├── AI realm: swarm networks and autonomous agents",
-      "│   ├── Open-source Web4 terminal development",
+      "│   ├── Open-source terminal development",
       "│   └── Partnerships",
       "├── Spiritual & Viral Warfare",
       "│   ├── Podcasts & Spaces",
@@ -292,16 +294,16 @@
       "",
       "Current team:",
       "",
-      "D_s — Context engineer",
+      "r_x — Context engineer",
       "X_4 — Legal",
       "Z_2 — Advisor",
       ""
     ],
     "collection": [
       "",
-      "In an era of overdesigned avatars, full of manufactured cuteness to evoke parasocial bonds, techno_punks choose a different path: the characters.",
+      "In an era of overdesigned avatars, techno_punks choose a different path. Each NFT holds an immutable, randomly generated character pair.",
       "",
-      "Characters that built the internet. Characters that transform thought into codes, intention into complex systems. Characters that connects human and machine language.",
+      "Characters that built the internet, transform thought into codes, intention into complex systems. Characters that connects human and machine language.",
       "",
       "//examples://",
       "",
@@ -318,7 +320,7 @@
       "  Status: 100% on-chain, no IPFS dependencies, no external servers",
       "  Font: Arial",
       "",
-      "Wait! Arial? Why? Because it's the anti-design. The default. The system font that refuses to dress up or pretend. It's punk because it doesn't give a fuck about your typography trends. Raw functionality over aesthetic.",
+      "Wait! Arial? Why? Because it's the anti-design. The default. The system font that refuses to dress up or pretend. It's punk because it doesn't give a fuck about your typography trends.",
       "",
       "MUTATION PROTOCOL: ACTIVE",
       "  # Owners can modify NFT colors via smart contract function calls. Your NFT, your rules.",
@@ -346,12 +348,13 @@
     "legal": [
       "",
       "techno_punks is distributed under the terms of the [VPL].",
-      "The project is primarily community-led; direction and development may evolve based on collective input.",
-      "By using, interacting with, minting, or contributing to techno_punks, you do so entirely at your own risk.",
-      "All token related interactions are governed by the codebase of Hyperliquid EVM network. Anyone interacting does so at their own risk.",
-      "There are no guarantees, warranties, or promises of functionality, value, or outcome.",
+      "The project is primarily community-led; direction and development may evolve based on collective input. By using, interacting with, minting, or contributing to techno_punks, you do so entirely at your own risk.",
+      "",
+      "All token related interactions are governed by the codebase of Hyperliquid EVM network. Anyone interacting does so at their own risk. There are no guarantees, warranties, or promises of functionality, value, or outcome.",
       "No individual or entity is liable for any loss, damages, or consequences arising from your participation.",
-      "This is an experimental, creative digital project. Not financial or legal advice.",
+      "",
+      "This is an experimental, creative digital project.",
+      "Not financial or legal advice.",
       "",
       "For concerns about the nature of the project, please contact directly with Satoshi Nakamoto. GL.",
       ""
@@ -368,6 +371,7 @@
       "  es   Spanish",
       "  de   German",
       "  zh   Chinese",
+      "  fi   Finnish",
       ""
     ]
   },

@@ -185,11 +185,15 @@
       "summary": "mukauta NFT:n tai sivuston teeman värejä",
       "detailed": {
         "description": "Aseta mukautettu väri käyttämällä:",
-        "usage": "set <token_id> [--bg <hex_väri>] [--text <hex_väri>]",
+        "usage": [
+          "set [token_id] [--bg <hex_väri>] [--text <hex_väri>]",
+          "set theme [--bg <hex_väri>] [--text <hex_väri>]"
+        ],
         "examples": [
           "set 123 --bg #000000",
           "set 123 --text #ffffff",
-          "set 123 --bg #ff0000 --text #00ff00"
+          "set 123 --bg #ff0000 --text #00ff00",
+          "set theme --bg #000000 --text #00ff00"
         ]
       },
       "error": {
@@ -225,13 +229,11 @@
   "commands": {
     "about": [
       "",
-      "techno_punks on post‑AGI‑selviytyjäklubi, jossa teknologia kohtaa DIY‑punk‑hengen.",
+      "techno_punks on onchain‑laboratorio DIY‑techno‑kulttuurille — odota työkaluja, droppeja ja kaunista epäjärjestystä.",
       "",
-      "Rakennamme avoimen lähdekoodin, web4‑valmista, multichain‑infrastruktuuria web3‑nativeille sieluille.",
+      "Rakennamme dynaamisia SVG‑NFT:itä (ERC‑721) ja avoimen lähdekoodin, Web3‑yhteensopivaa CLI‑terminaalia, jonka avulla voit mukauttaa onchain‑identiteettiäsi.",
       "",
-      "Odotettavissa NFT‑droppeja, reivejä ja ripaus kaaosta.",
-      "",
-      "Liity avoimeen yhteisöömme: kontribuoi omalla tavallasi.",
+      "Liity avoimeen yhteisöömme. Kontribuoi omalla tavallasi.",
       ""
     ],
     "supply": [
@@ -258,17 +260,25 @@
       "├── NFT:t",
       "│   └── Alkuperäisen kokoelman julkaisu",
       "├── Yhteisö",
-      "│   └── DAO:n muodostaminen ja hallinto",
-      "├── Teknologia",
-      "│   ├── On-chain-metadata ja SVG-renderöinti",
-      "│   └── NFT:iden tekoälyohjattu evoluutio",
-      "└── Ekosysteemi",
-      "    ├── Kumppanuudet ja yhteistyöt",
-      "    └── Hyödyllisyys ja integraatio muihin alustoihin",
+      "│   ├── Vahvistusbotin kehitys HyperEVM:lle",
+      "│   └── Discord‑DAO",
+      "├── Infrastruktuuri & ekosysteemi",
+      "│   ├── Mukautettu markkinapaikka (odota kaaosta)",
+      "│   ├── AI‑alue: parviverkot ja autonomiset agentit",
+      "│   ├── Avoimen lähdekoodin terminaalikehitys",
+      "│   └── Kumppanuudet",
+      "├── Henkinen & viraali sodankäynti",
+      "│   ├── Podcastit & Spaces",
+      "│   ├── Työpajat & Hackathonit",
+      "│   ├── Reivit & Media‑hackit",
+      "├── Tokenomiikka",
+      "│   └── Moniketju‑airdropit (ERC‑20, ERC‑721)",
       "",
-      "Tämä tiekartta on elävä asiakirja. Se kehittyy yhteisön palautteen ja teknologisten edistysaskelten perusteella.",
-      "Kommenttisi, postauksesi, tykkäyksesi, sitoumuksesi ja äänesi muovaavat sitä, mitä techno_punksista tulee.",
-      "On-chain-data kertoo todellisen tarinan.",
+      "*Tiekartta ei ole lukittu eikä takuu*",
+      "",
+      "Yhteisön kontribuutiot, intentiot ja päätökset voivat muovata suuntaa radikaalisti.",
+      "Kommenttisi, postauksesi, tykkäyksesi, commitit ja äänesi muovaavat sitä, miksi techno_punks tulee.",
+      "On‑chain‑data kertoo todellisen tarinan.",
       "",
       "Osallistumistodistus > omistustodistus.",
       "Arvo = konsensus",
@@ -280,9 +290,9 @@
       "",
       "Nykyinen tiimi:",
       "",
-      "D_s — Konteksti-insinööri",
+      "r_x — Konteksti‑insinööri",
       "X_4 — Lakiasiat",
-      "?_2 — Neuvonantaja",
+      "Z_2 — Neuvonantaja",
       ""
     ],
     "collection": [
@@ -333,13 +343,14 @@
     ],
     "legal": [
       "",
-      "techno_punks jaetaan [[VPL]]:n ehtojen mukaisesti.",
-      "Projekti on pääasiassa yhteisöjohtoinen; suunta ja kehitys voivat muuttua yhteisön panoksen perusteella.",
-      "Käyttämällä, olemalla vuorovaikutuksessa, minttaamalla tai osallistumalla techno_punksiin teet sen täysin omalla vastuullasi.",
-      "Kaikkia tokeniin liittyviä vuorovaikutuksia säätelee Ethereum-verkon koodikanta. Jokainen vuorovaikuttaja tekee sen omalla vastuullaan.",
-      "Toimivuudesta, arvosta tai tuloksista ei ole takeita, takuita tai lupauksia.",
+      "techno_punks jaetaan [VPL]:n ehtojen mukaisesti.",
+      "Projekti on pääasiassa yhteisövetoinen; suunta ja kehitys voivat muuttua kollektiivisen panoksen perusteella. Käyttämällä, olemalla vuorovaikutuksessa, minttaamalla tai kontribuoimalla techno_punksiin toimit täysin omalla vastuullasi.",
+      "",
+      "Kaikkia tokeneihin liittyviä vuorovaikutuksia säätelee Hyperliquid EVM ‑verkon koodikanta. Jokainen vuorovaikutus tapahtuu omalla vastuulla. Mitään takuita, vakuuksia tai lupauksia toiminnallisuudesta, arvosta tai lopputuloksesta ei anneta.",
       "Mikään yksilö tai yhteisö ei ole vastuussa mistään menetyksistä, vahingoista tai seurauksista, jotka johtuvat osallistumisestasi.",
-      "Tämä on kokeellinen, luova, digitaalinen projekti. Ei taloudellista tai oikeudellista neuvontaa.",
+      "",
+      "Tämä on kokeellinen, luova, digitaalinen projekti.",
+      "Ei taloudellista tai oikeudellista neuvontaa.",
       "",
       "Jos sinulla on huolia projektin luonteesta, ota yhteyttä suoraan Satoshi Nakamotoon. Onnea matkaan.",
       ""

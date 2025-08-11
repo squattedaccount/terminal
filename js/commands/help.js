@@ -3,6 +3,14 @@ import CommandRegistry from './registry.js';
 import logger from '../core/logger.js';
 import { createTerminalError } from '../utils/messaging.js';
 
+// Escape HTML so placeholders like <hex_color> render correctly
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
 export default {
   name: 'help',
   category: 'core',
@@ -39,9 +47,24 @@ export default {
       const { description, usage, examples, footer } = helpInfo;
       const output = [
         { type: 'html', content: '' },
-        { type: 'html', content: `<strong>${command.name}</strong>: ${description || i18n.t('help.specific.noDescription')}` },
-        { type: 'html', content: `${i18n.t('help.specific.usagePrefix')} ${usage || i18n.t('help.specific.noUsage')}` }
+        { type: 'html', content: `<strong>${command.name}</strong>: ${description || i18n.t('help.specific.noDescription')}` }
       ];
+
+      // Render usage: support either a string or an array of lines
+      if (usage) {
+        // Add an empty line above the Usage section for better readability
+        output.push({ type: 'html', content: '' });
+        output.push({ type: 'html', content: i18n.t('help.specific.usagePrefix') });
+        if (Array.isArray(usage)) {
+          usage.forEach(u => {
+            output.push({ type: 'html', content: `  ${escapeHtml(u)}` });
+          });
+        } else {
+          output.push({ type: 'html', content: `  ${escapeHtml(usage)}` });
+        }
+      } else {
+        output.push({ type: 'html', content: `${i18n.t('help.specific.usagePrefix')} ${i18n.t('help.specific.noUsage')}` });
+      }
 
       if (examples && Array.isArray(examples) && examples.length > 0) {
         output.push({ type: 'html', content: '' });

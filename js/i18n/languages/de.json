@@ -160,11 +160,15 @@
       "summary": "passe NFT- oder Website-Theme-Farben an",
       "detailed": {
         "description": "Um eine benutzerdefinierte Farbe festzulegen, verwende:",
-        "usage": "set <token_id> [--bg <hex_farbe>] [--text <hex_farbe>]",
+        "usage": [
+          "set [token_id] [--bg <hex_farbe>] [--text <hex_farbe>]",
+          "set theme [--bg <hex_farbe>] [--text <hex_farbe>]"
+        ],
         "examples": [
           "set 123 --text #123456",
           "set 456 --bg #abcdef",
-          "set 789 --bg #ff0000 --text #00ff00"
+          "set 789 --bg #ff0000 --text #00ff00",
+          "set theme --bg #000000 --text #00ff00"
         ]
       },
       "error": {
@@ -346,13 +350,11 @@
     },
     "about": [
       "",
-      "techno_punks ist ein Post‑AGI‑Survivor‑Club, in dem sich Technologie und DIY‑Punk‑Spirit treffen.",
+      "techno_punks ist ein onchain‑Labor für DIY‑Techno‑Kultur. Erwartet Tools, Drops und schönes Chaos.",
       "",
-      "Wir bauen Open‑Source-, Web4‑fähige, Multichain‑Infrastruktur für web3‑native Seelen.",
+      "Unsere Basis baut auf dynamischen SVG‑NFTs (ERC‑721) und einem Open‑Source, Web3‑kompatiblen CLI‑Terminal auf, das Holder ihre onchain‑Identität anpassen lässt.",
       "",
-      "Erwarte NFT‑Drops, Raves und ein bisschen Chaos.",
-      "",
-      "Schließe dich unserer offenen Community an: Leiste deinen eigenen Beitrag.",
+      "Tritt unserer offenen Community bei. Trage auf deine Weise bei.",
       ""
     ],
     "minting_guide": [
@@ -363,7 +365,7 @@
     ],
     "roadmap": [
       "",
-      "techno_punks sagen die Zukunft nicht voraus. Sie programmieren sie:",
+      "techno_punks sagen die Zukunft nicht voraus, sie programmieren sie:",
       "",
       "Ausführungsbaum:",
       "├── NFTs",
@@ -374,7 +376,7 @@
       "├── Infrastruktur & Ökosystem",
       "│   ├── Benutzerdefinierter Marktplatz (erwarte Chaos)",
       "│   ├── KI-Reich: Schwarmnetzwerke und autonome Agenten",
-      "│   ├── Open-Source-Web3-Terminal-Entwicklung",
+      "│   ├── Open-Source‑Terminal‑Entwicklung",
       "│   └── Strategische Partnerschaften",
       "├── Inhalt",
       "│   ├── Podcasts & Spaces (Verschwörung & Fake News)",
@@ -396,9 +398,9 @@
       "",
       "Aktuelles Team:",
       "",
-      "D_s — Lead Design",
+      "r_x — Kontextingenieur",
       "X_4 — Rechtliches",
-      "?_2 — Berater",
+      "Z_2 — Berater",
       "",
       "Proof-of-participation > proof-of-investment.",
       "Wert = Konsens",
@@ -452,15 +454,16 @@
     ],
     "legal": [
       "",
-      "techno_punks wird unter den Bedingungen der [[VPL]] vertrieben.",
-      "Das Projekt wird hauptsächlich von der Community geleitet; Richtung und Entwicklung können sich je nach kollektivem Input entwickeln.",
-      "Durch die Nutzung, Interaktion, Prägung oder Mitwirkung an techno_punks handelst du vollständig auf eigenes Risiko.",
-      "Alle tokenbezogenen Interaktionen unterliegen der Codebasis des Ethereum-Netzwerks. Jeder, der interagiert, tut dies auf eigenes Risiko.",
-      "Es gibt keine Garantien, Gewährleistungen oder Versprechungen hinsichtlich Funktionalität, Wert oder Ergebnis.",
-      "Keine Einzelperson oder Einrichtung haftet für Verluste, Schäden oder Konsequenzen, die sich aus deiner Teilnahme ergeben.",
-      "Dies ist ein experimentelles, kreatives digitales Projekt. Keine Finanz- oder Rechtsberatung.",
+      "techno_punks wird unter den Bedingungen der [VPL] verteilt.",
+      "Das Projekt ist überwiegend Community‑geführt; Richtung und Entwicklung können sich durch kollektiven Input verändern. Durch Nutzung, Interaktion, Prägen oder Beitragen zu techno_punks handelst du vollständig auf eigenes Risiko.",
       "",
-      "Bei Bedenken bezüglich der Art des Projekts wende dich bitte direkt an Satoshi Nakamoto. GL.",
+      "Alle tokenbezogenen Interaktionen werden vom Code der Hyperliquid‑EVM‑Netzwerkbasis geregelt. Jede Interaktion erfolgt auf eigenes Risiko. Es gibt keine Garantien, Gewährleistungen oder Zusagen zu Funktionalität, Wert oder Ergebnis.",
+      "Keine Einzelperson oder Organisation haftet für Verluste, Schäden oder Folgen aus deiner Teilnahme.",
+      "",
+      "Dies ist ein experimentelles, kreatives, digitales Projekt.",
+      "Keine Finanz- oder Rechtsberatung.",
+      "",
+      "Bei Bedenken zur Natur des Projekts wende dich direkt an Satoshi Nakamoto. GL.",
       ""
     ],
     "lang": [
