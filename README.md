@@ -56,6 +56,7 @@ Here are some of the core commands you can use in the terminal:
 This is more than just code; it's a community. Connect with other punk, and hack future of the underground.
 
 - **[Discord Server](https://discord.gg/technopunks)**
+- - **[X](https://x.com/squattedaccount)**
 
 ---
 
